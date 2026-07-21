@@ -6,7 +6,7 @@ import { siteConfig } from '@/lib/site-config';
 
 type Status = 'idle' | 'loading' | 'success' | 'error';
 
-export function BrandReviewForm() {
+export function BrandReviewForm({ selectedPackage }: { selectedPackage?: string }) {
   const [status, setStatus] = useState<Status>('idle');
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -63,6 +63,15 @@ export function BrandReviewForm() {
         className="absolute -left-[9999px]"
         aria-hidden="true"
       />
+
+      {selectedPackage && (
+        <>
+          <input type="hidden" name="package" value={selectedPackage} />
+          <p className="mb-4 inline-flex items-center gap-2 rounded-full bg-brand-red/10 px-4 py-1.5 text-sm font-semibold text-brand-red">
+            Interested in: {selectedPackage}
+          </p>
+        </>
+      )}
 
       <div className="grid gap-4 sm:grid-cols-2">
         <div>

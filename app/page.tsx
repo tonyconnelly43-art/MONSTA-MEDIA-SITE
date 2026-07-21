@@ -49,7 +49,13 @@ const valueProps = [
   { icon: Palette, label: 'One Brand, Every Touchpoint' },
 ];
 
-export default function HomePage() {
+export default async function HomePage({
+  searchParams,
+}: {
+  searchParams: Promise<{ package?: string }>;
+}) {
+  const { package: selectedPackage } = await searchParams;
+
   return (
     <>
       <section className="relative min-h-[560px] overflow-hidden bg-brand-navy text-white md:min-h-[680px]">
@@ -142,7 +148,7 @@ export default function HomePage() {
 
       <WhyChooseMonsta />
 
-      <BrandTransformation />
+      <BrandTransformation selectedPackage={selectedPackage} />
 
       <section className="py-20">
         <Container>

@@ -84,7 +84,9 @@ export default function PackagesPage() {
                 ))}
               </ul>
               <div className="mt-8">
-                <CTAButton href="/#free-brand-review">Get Started</CTAButton>
+                <CTAButton href={`/?package=${encodeURIComponent(pkg.name)}#free-brand-review`}>
+                  Get Started
+                </CTAButton>
               </div>
             </div>
           ))}
