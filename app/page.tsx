@@ -60,9 +60,9 @@ export default function HomePage() {
             fill
             priority
             sizes="62vw"
-            className="object-cover object-[88%_center]"
+            className="object-cover object-[35%_center]"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/70 via-30% to-transparent to-62%" />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/70 via-25% to-transparent to-55%" />
           <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/40 via-transparent to-transparent" />
         </div>
 
