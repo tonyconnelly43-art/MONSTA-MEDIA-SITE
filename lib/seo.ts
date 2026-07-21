@@ -10,7 +10,7 @@ type PageMetaInput = {
 
 export function buildMetadata({ title, description, path, ogImage }: PageMetaInput): Metadata {
   const url = `${siteConfig.url}${path}`;
-  const image = ogImage ?? '/og-default.svg';
+  const image = ogImage ?? '/og-default.png';
 
   return {
     title,

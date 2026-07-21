@@ -46,13 +46,22 @@ const valueProps = [
 export default function HomePage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-brand-navy text-white">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 text-brand-red/10 bg-monster-dots"
-        />
-        <Container className="relative grid items-center gap-10 py-20 md:grid-cols-2 md:py-28">
-          <div>
+      <section className="relative min-h-[560px] overflow-hidden bg-brand-navy text-white md:min-h-[680px]">
+        <div className="absolute inset-0">
+          <Image
+            src="/van-wrap-true-north.png"
+            alt="True North Heating & Cooling service van with a full custom wrap design by Monsta Media & Design, featuring a bold polar bear mascot and bright teal and navy branding"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[75%_center]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/85 to-brand-navy/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-transparent to-transparent" />
+        </div>
+
+        <Container className="relative py-20 md:py-32">
+          <div className="max-w-xl">
             <span className="inline-flex items-center gap-2 rounded-full border border-brand-red/60 bg-brand-red/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-brand-red">
               <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
               Cleveland &amp; Northfield, Ohio
@@ -72,26 +81,17 @@ export default function HomePage() {
               </CTAButton>
             </div>
           </div>
-          <div className="flex flex-col items-center">
-            <div className="relative w-full max-w-lg overflow-hidden rounded-chunky border-2 border-brand-red/40 shadow-2xl">
-              <Image
-                src="/van-wrap-true-north.png"
-                alt="True North Heating & Cooling service van with a full custom wrap design by Monsta Media & Design, featuring a bold polar bear mascot and bright teal and navy branding"
-                width={1683}
-                height={934}
-                priority
-                sizes="(min-width: 768px) 32rem, 90vw"
-                className="h-auto w-full"
-              />
-              <div className="absolute -bottom-4 -right-4 flex h-16 w-16 items-center justify-center rounded-full border-4 border-brand-navy bg-brand-red shadow-lg">
-                <MonsterMascot className="h-10 w-10" />
-              </div>
-            </div>
-            <p className="mt-6 text-center text-xs font-semibold uppercase tracking-widest text-brand-cream/60">
-              Real Client Work &mdash; Van Wrap Design by Monsta Media &amp; Design
-            </p>
+
+          <div className="mt-10 inline-flex items-center gap-3 rounded-full border border-white/15 bg-brand-navy/70 py-2 pl-2 pr-5 backdrop-blur-sm">
+            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-cream">
+              <MonsterMascot className="h-6 w-6" />
+            </span>
+            <span className="text-xs font-semibold uppercase tracking-widest text-brand-cream/90">
+              Real Client Work &mdash; Van Wrap Design by Monsta Media
+            </span>
           </div>
         </Container>
+
         <div className="relative border-t border-white/10 bg-brand-navy-light/60">
           <Container className="flex flex-wrap items-center justify-center gap-x-10 gap-y-3 py-5 text-sm font-semibold text-brand-cream/90 md:justify-between">
             {valueProps.map((item) => (
