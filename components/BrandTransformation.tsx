@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { ArrowRight, Truck, X, Check } from 'lucide-react';
 import { Container } from './Container';
 import { BrandReviewForm } from './BrandReviewForm';
+import { GoogleReviewsBadge } from './GoogleReviewsBadge';
 
 const before = ['Looks generic', 'No trust', 'Competes on price', 'Gets overlooked'];
 const after = ['Instant trust', 'Stands out', 'Charges more', 'Gets chosen'];
@@ -66,6 +67,9 @@ export function BrandTransformation() {
             Get a custom review of your current brand and see exactly what&apos;s holding you back from
             winning more jobs.
           </p>
+          <div className="mt-5 flex justify-center">
+            <GoogleReviewsBadge />
+          </div>
           <div className="mt-8">
             <BrandReviewForm />
           </div>

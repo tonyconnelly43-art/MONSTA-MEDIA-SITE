@@ -5,6 +5,7 @@ import { MapPin, Palette, Shirt, Truck, Zap, Globe } from 'lucide-react';
 import { BrandTransformation } from '@/components/BrandTransformation';
 import { Container } from '@/components/Container';
 import { CTAButton } from '@/components/CTAButton';
+import { GoogleReviewsBadge } from '@/components/GoogleReviewsBadge';
 import { MonsterMascot } from '@/components/MonsterMascot';
 import { ProcessSteps } from '@/components/ProcessSteps';
 import { WhyChooseMonsta } from '@/components/WhyChooseMonsta';
@@ -87,13 +88,16 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="mt-10 inline-flex items-center gap-3 rounded-full border border-white/15 bg-brand-navy/70 py-2 pl-2 pr-5 backdrop-blur-sm">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-cream">
-              <MonsterMascot className="h-6 w-6" />
-            </span>
-            <span className="text-xs font-semibold uppercase tracking-widest text-brand-cream/90">
-              Real Client Work &mdash; Van Wrap Design by Monsta Media
-            </span>
+          <div className="mt-10 flex flex-wrap items-center gap-4">
+            <div className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-brand-navy/70 py-2 pl-2 pr-5 backdrop-blur-sm">
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-cream">
+                <MonsterMascot className="h-6 w-6" />
+              </span>
+              <span className="text-xs font-semibold uppercase tracking-widest text-brand-cream/90">
+                Real Client Work &mdash; Van Wrap Design by Monsta Media
+              </span>
+            </div>
+            <GoogleReviewsBadge />
           </div>
         </Container>
 

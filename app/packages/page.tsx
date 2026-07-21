@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Check } from 'lucide-react';
 import { Container } from '@/components/Container';
 import { CTAButton } from '@/components/CTAButton';
+import { GoogleReviewsBadge } from '@/components/GoogleReviewsBadge';
 import { buildMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata({
@@ -51,6 +52,9 @@ export default function PackagesPage() {
             reliable as their work. Pricing is customized to your business &mdash; reach out for a free
             quote.
           </p>
+          <div className="mt-6">
+            <GoogleReviewsBadge />
+          </div>
         </Container>
       </section>
 

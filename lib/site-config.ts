@@ -19,6 +19,7 @@ export const siteConfig = {
     facebook: 'https://www.facebook.com/monstamediaanddesign',
     instagram: 'https://www.instagram.com/monstamediaanddesign',
   },
+  googleReviewUrl: 'https://maps.app.goo.gl/oQuTGtcgNUvHSx3P9',
   colors: {
     red: '#D62828',
     navy: '#0A1930',

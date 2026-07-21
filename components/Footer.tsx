@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Facebook, Instagram, Mail, Phone } from 'lucide-react';
 import { Container } from './Container';
+import { GoogleReviewsBadge } from './GoogleReviewsBadge';
 import { footerNav, primaryNav, siteConfig } from '@/lib/site-config';
 
 export function Footer() {
@@ -17,6 +18,9 @@ export function Footer() {
             className="h-9 w-auto"
           />
           <p className="mt-3 text-sm text-brand-cream/80">{siteConfig.tagline}</p>
+          <div className="mt-3">
+            <GoogleReviewsBadge />
+          </div>
           <p className="mt-4 text-sm">
             {siteConfig.address.locality}, {siteConfig.address.region} &mdash; Serving Cleveland &amp; Northeast Ohio
           </p>
