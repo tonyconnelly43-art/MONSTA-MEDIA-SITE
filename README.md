@@ -14,11 +14,28 @@ launch:
 
 ## Free Brand Review form
 
-The homepage lead form (`components/BrandReviewForm.tsx`) posts to `app/api/quote/route.ts`, which emails
-the submission via [Resend](https://resend.com). **Without setup, submissions will fail with a friendly
-error message telling the visitor to call/email directly instead.** To make it actually send:
+The homepage lead form (`components/BrandReviewForm.tsx`) posts to `app/api/quote/route.ts`, which saves
+the lead to a Postgres database and/or emails it via Resend -- either one is enough for the form to work,
+and it's fine to set up only one. **Without either configured, submissions fail with a friendly error
+message telling the visitor to call/email directly instead.**
 
-1. Create a free Resend account and API key.
+### Option A: save to a database you can browse (recommended, no new account needed)
+
+Vercel's Storage tab lets you add a Postgres database (powered by Neon) directly from the dashboard you
+already use to deploy this project:
+
+1. In the Vercel dashboard, open the `monsta-media-site` project → **Storage** tab → **Create Database** →
+   choose **Postgres**.
+2. Connect it to this project when prompted -- Vercel injects a `DATABASE_URL` environment variable
+   automatically, no manual copy/paste needed.
+3. Redeploy. The `leads` table is created automatically on the first form submission (see the
+   `CREATE TABLE IF NOT EXISTS` in the route handler) -- no manual SQL required.
+4. To view submissions, open the database from the Storage tab, which links out to Neon's console; its
+   **Tables** view shows every lead in a spreadsheet-like browser.
+
+### Option B: get an email per lead
+
+1. Create a free [Resend](https://resend.com) account and API key.
 2. In the Vercel project settings, add an environment variable `RESEND_API_KEY` with that key.
 3. Redeploy. Leads will land in the inbox set by `siteConfig.email` (`lib/site-config.ts`), with the
    submitter's email set as reply-to when they provide one.

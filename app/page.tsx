@@ -109,10 +109,12 @@ export default function HomePage() {
 
       <section className="py-20">
         <Container>
-          <h2 className="font-display text-3xl text-brand-navy md:text-4xl">What We Do</h2>
-          <p className="mt-3 max-w-xl text-brand-navy/70">
-            Everything your brand needs, built as one connected system.
-          </p>
+          <div className="text-center">
+            <h2 className="font-display text-3xl text-brand-navy md:text-4xl">What We Do</h2>
+            <p className="mx-auto mt-3 max-w-xl text-brand-navy/70">
+              Everything your brand needs, built as one connected system.
+            </p>
+          </div>
           <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {services.map((service) => (
               <div
