@@ -6,6 +6,7 @@ import { BrandTransformation } from '@/components/BrandTransformation';
 import { Container } from '@/components/Container';
 import { CTAButton } from '@/components/CTAButton';
 import { MonsterMascot } from '@/components/MonsterMascot';
+import { ProcessSteps } from '@/components/ProcessSteps';
 import { WorkGallery } from '@/components/WorkGallery';
 import { buildMetadata } from '@/lib/seo';
 import { workItems } from '@/lib/work';
@@ -131,6 +132,8 @@ export default function HomePage() {
           </div>
         </Container>
       </section>
+
+      <ProcessSteps />
 
       <BrandTransformation />
 
