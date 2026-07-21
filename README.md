@@ -11,8 +11,21 @@ launch:
 - Home, Packages, Services page copy
 - Blog posts (2 example posts included; add real posts as `.mdx` files in `content/blog`)
 - Legal, Privacy, and Terms & Conditions pages (marked with an on-page notice)
-- Logo/mascot (currently a simple placeholder SVG in `components/MonsterMascot.tsx`) and all photography
-- Open Graph image (`public/og-default.svg` — replace with a real PNG/JPG, some platforms don't render SVG OG images)
+
+## Free Brand Review form
+
+The homepage lead form (`components/BrandReviewForm.tsx`) posts to `app/api/quote/route.ts`, which emails
+the submission via [Resend](https://resend.com). **Without setup, submissions will fail with a friendly
+error message telling the visitor to call/email directly instead.** To make it actually send:
+
+1. Create a free Resend account and API key.
+2. In the Vercel project settings, add an environment variable `RESEND_API_KEY` with that key.
+3. Redeploy. Leads will land in the inbox set by `siteConfig.email` (`lib/site-config.ts`), with the
+   submitter's email set as reply-to when they provide one.
+
+The route sends from `onboarding@resend.dev` (Resend's shared sandbox address, works without verifying a
+domain). To send from `you@monstamediaanddesign.com` instead, verify the domain in Resend and update the
+`from` address in the route handler.
 
 ## New SEO pages
 

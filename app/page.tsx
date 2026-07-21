@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { MapPin, Palette, Shirt, Truck, Zap, Globe } from 'lucide-react';
+import { BrandTransformation } from '@/components/BrandTransformation';
 import { Container } from '@/components/Container';
 import { CTAButton } from '@/components/CTAButton';
 import { MonsterMascot } from '@/components/MonsterMascot';
@@ -128,6 +129,8 @@ export default function HomePage() {
           </div>
         </Container>
       </section>
+
+      <BrandTransformation />
 
       <section className="py-20">
         <Container>
