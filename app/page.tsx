@@ -125,9 +125,9 @@ export default function HomePage() {
             {services.map((service) => (
               <div
                 key={service.title}
-                className="rounded-chunky border-2 border-brand-navy/10 p-6 transition-colors hover:border-brand-red"
+                className="rounded-chunky border-2 border-brand-navy/10 p-6 text-center transition-colors hover:border-brand-red"
               >
-                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-red/10 text-brand-red">
+                <div className="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-brand-red/10 text-brand-red">
                   <service.icon className="h-5 w-5" aria-hidden="true" />
                 </div>
                 <h3 className="mt-4 font-display text-xl text-brand-navy">{service.title}</h3>
