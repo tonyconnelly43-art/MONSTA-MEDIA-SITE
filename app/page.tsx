@@ -7,6 +7,7 @@ import { Container } from '@/components/Container';
 import { CTAButton } from '@/components/CTAButton';
 import { MonsterMascot } from '@/components/MonsterMascot';
 import { ProcessSteps } from '@/components/ProcessSteps';
+import { WhyChooseMonsta } from '@/components/WhyChooseMonsta';
 import { WorkGallery } from '@/components/WorkGallery';
 import { buildMetadata } from '@/lib/seo';
 import { workItems } from '@/lib/work';
@@ -108,6 +109,8 @@ export default function HomePage() {
         </div>
       </section>
 
+      <WhyChooseMonsta />
+
       <section className="py-20">
         <Container>
           <div className="text-center">
@@ -142,11 +145,11 @@ export default function HomePage() {
           <div className="text-center">
             <h2 className="font-display text-3xl text-brand-navy md:text-4xl">Our Work</h2>
             <p className="mx-auto mt-3 max-w-xl text-brand-navy/70">
-              Brands we&apos;ve built logos and van wraps for.
+              A few of the brands we&apos;ve built logos and van wraps for.
             </p>
           </div>
           <div className="mt-10">
-            <WorkGallery items={workItems} />
+            <WorkGallery items={workItems.slice(0, 6)} />
           </div>
           <div className="mt-10 text-center">
             <Link href="/work" className="font-semibold text-brand-red underline">
