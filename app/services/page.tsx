@@ -66,7 +66,7 @@ export default function ServicesPage() {
           {services.map((service) => (
             <div
               key={service.title}
-              className="flex flex-col gap-4 rounded-chunky border-2 border-brand-navy/10 p-8 sm:flex-row sm:items-start"
+              className="flex flex-col gap-4 rounded-chunky border-2 border-brand-navy/10 p-8 sm:flex-row sm:items-center"
             >
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand-red/10 text-brand-red">
                 <service.icon className="h-6 w-6" aria-hidden="true" />
