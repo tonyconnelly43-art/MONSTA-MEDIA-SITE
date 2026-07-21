@@ -109,8 +109,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <WhyChooseMonsta />
-
       <section className="py-20">
         <Container>
           <div className="text-center">
@@ -137,6 +135,8 @@ export default function HomePage() {
       </section>
 
       <ProcessSteps />
+
+      <WhyChooseMonsta />
 
       <BrandTransformation />
 
