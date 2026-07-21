@@ -40,7 +40,7 @@ export function BrandReviewForm() {
 
   if (status === 'success') {
     return (
-      <div className="rounded-chunky border-2 border-brand-red/40 bg-white p-8 text-center">
+      <div className="mx-auto max-w-3xl rounded-chunky border-2 border-brand-red/40 bg-white p-8 text-center">
         <p className="font-display text-2xl text-brand-navy">You&apos;re In!</p>
         <p className="mt-2 text-brand-navy/70">
           We got your request and will reach out shortly to schedule your free brand review.
@@ -50,7 +50,10 @@ export function BrandReviewForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-chunky border-2 border-brand-navy/10 bg-white p-8">
+    <form
+      onSubmit={handleSubmit}
+      className="mx-auto max-w-3xl rounded-chunky border-2 border-brand-navy/10 bg-white p-8 text-left"
+    >
       {/* Honeypot field, hidden from real users */}
       <input
         type="text"
@@ -61,7 +64,7 @@ export function BrandReviewForm() {
         aria-hidden="true"
       />
 
-      <div className="space-y-4">
+      <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className="text-sm font-semibold text-brand-navy">
             Name *
@@ -128,7 +131,7 @@ export function BrandReviewForm() {
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="mt-6 w-full rounded-chunky bg-brand-red px-6 py-3.5 font-display uppercase tracking-wide text-white shadow-[0_6px_0_0_#7a1414] transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[0_4px_0_0_#7a1414] disabled:cursor-not-allowed disabled:opacity-60"
+        className="mt-6 w-full rounded-chunky bg-brand-red px-6 py-3.5 font-display uppercase tracking-wide text-white shadow-[0_6px_0_0_#7a1414] transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[0_4px_0_0_#7a1414] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto sm:px-16"
       >
         {status === 'loading' ? 'Sending...' : 'Submit'}
       </button>

@@ -60,15 +60,15 @@ export function BrandTransformation() {
           </div>
         </div>
 
-        <div className="mt-20 grid items-center gap-10 md:grid-cols-2">
-          <div>
-            <h3 className="font-display text-3xl text-white md:text-4xl">Free 10 Minute Brand Review</h3>
-            <p className="mt-4 max-w-md text-brand-cream/80">
-              Get a custom review of your current brand and see exactly what&apos;s holding you back from
-              winning more jobs.
-            </p>
+        <div className="mt-20 text-center">
+          <h3 className="font-display text-3xl text-white md:text-4xl">Free 10 Minute Brand Review</h3>
+          <p className="mx-auto mt-4 max-w-md text-brand-cream/80">
+            Get a custom review of your current brand and see exactly what&apos;s holding you back from
+            winning more jobs.
+          </p>
+          <div className="mt-8">
+            <BrandReviewForm />
           </div>
-          <BrandReviewForm />
         </div>
       </Container>
     </section>
