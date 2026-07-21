@@ -1,7 +1,7 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { Facebook, Instagram, Mail, Phone } from 'lucide-react';
 import { Container } from './Container';
-import { MonsterMascot } from './MonsterMascot';
 import { footerNav, primaryNav, siteConfig } from '@/lib/site-config';
 
 export function Footer() {
@@ -9,10 +9,13 @@ export function Footer() {
     <footer className="border-t-4 border-brand-red bg-brand-navy text-brand-cream">
       <Container className="grid gap-10 py-14 md:grid-cols-3">
         <div>
-          <div className="flex items-center gap-2">
-            <MonsterMascot className="h-9 w-9" />
-            <p className="font-display text-lg uppercase tracking-wide text-white">{siteConfig.name}</p>
-          </div>
+          <Image
+            src="/logo-monsta-dark-bg.png"
+            alt={siteConfig.name}
+            width={800}
+            height={242}
+            className="h-9 w-auto"
+          />
           <p className="mt-3 text-sm text-brand-cream/80">{siteConfig.tagline}</p>
           <p className="mt-4 text-sm">
             {siteConfig.address.locality}, {siteConfig.address.region} &mdash; Serving Cleveland &amp; Northeast Ohio
