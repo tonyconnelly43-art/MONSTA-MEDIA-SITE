@@ -134,19 +134,19 @@ export default function HomePage() {
 
       <section className="py-20">
         <Container>
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <h2 className="font-display text-3xl text-brand-navy md:text-4xl">Our Work</h2>
-              <p className="mt-3 max-w-xl text-brand-navy/70">
-                A few of the brands we&apos;ve built logos and van wraps for.
-              </p>
-            </div>
+          <div className="text-center">
+            <h2 className="font-display text-3xl text-brand-navy md:text-4xl">Our Work</h2>
+            <p className="mx-auto mt-3 max-w-xl text-brand-navy/70">
+              Brands we&apos;ve built logos and van wraps for.
+            </p>
+          </div>
+          <div className="mt-10">
+            <WorkGallery items={workItems} />
+          </div>
+          <div className="mt-10 text-center">
             <Link href="/work" className="font-semibold text-brand-red underline">
               View Full Portfolio
             </Link>
-          </div>
-          <div className="mt-10">
-            <WorkGallery items={workItems.slice(0, 6)} />
           </div>
         </Container>
       </section>
