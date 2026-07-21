@@ -128,13 +128,15 @@ export function BrandReviewForm() {
         </p>
       )}
 
-      <button
-        type="submit"
-        disabled={status === 'loading'}
-        className="mt-6 w-full rounded-chunky bg-brand-red px-6 py-3.5 font-display uppercase tracking-wide text-white shadow-[0_6px_0_0_#7a1414] transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[0_4px_0_0_#7a1414] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto sm:px-16"
-      >
-        {status === 'loading' ? 'Sending...' : 'Submit'}
-      </button>
+      <div className="mt-6 flex justify-center">
+        <button
+          type="submit"
+          disabled={status === 'loading'}
+          className="w-full rounded-chunky bg-brand-red px-6 py-3.5 font-display uppercase tracking-wide text-white shadow-[0_6px_0_0_#7a1414] transition-all duration-150 hover:-translate-y-0.5 hover:shadow-[0_4px_0_0_#7a1414] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto sm:px-16"
+        >
+          {status === 'loading' ? 'Sending...' : 'Submit'}
+        </button>
+      </div>
     </form>
   );
 }
