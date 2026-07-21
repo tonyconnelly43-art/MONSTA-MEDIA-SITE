@@ -7,7 +7,7 @@ export const siteConfig = {
     'Monsta Media & Design is a branding and design agency in Northfield, Ohio, building bold logos, van wraps, uniforms, and brand systems for home service and trades businesses across Cleveland and Northeast Ohio.',
   phone: '+1-330-000-0000',
   phoneDisplay: '(330) 000-0000',
-  email: 'hello@monstamediaanddesign.com',
+  email: 'monstamediadesign@gmail.com',
   address: {
     locality: 'Northfield',
     region: 'OH',
