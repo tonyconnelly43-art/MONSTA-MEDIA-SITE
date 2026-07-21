@@ -28,6 +28,7 @@ export const siteConfig = {
 export const primaryNav = [
   { label: 'Home', href: '/' },
   { label: 'Services', href: '/services' },
+  { label: 'Our Work', href: '/work' },
   { label: 'Packages', href: '/packages' },
   { label: 'Branding for Trades', href: '/branding' },
   { label: 'Blog', href: '/blog' },
