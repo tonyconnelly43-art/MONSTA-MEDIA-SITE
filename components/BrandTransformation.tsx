@@ -19,8 +19,8 @@ export function BrandTransformation() {
         </div>
 
         <div className="mt-12 grid items-center gap-6 md:grid-cols-[1fr_auto_1fr]">
-          <div className="rounded-chunky border-2 border-white/10 bg-brand-navy p-6">
-            <p className="font-display text-xl uppercase tracking-wide text-brand-cream/70">Before</p>
+          <div className="rounded-chunky border-2 border-brand-red bg-brand-navy p-6">
+            <p className="font-display text-xl uppercase tracking-wide text-brand-red">Before</p>
             <ul className="mt-4 space-y-2">
               {before.map((item) => (
                 <li key={item} className="flex items-center gap-2 text-sm text-brand-cream/80">
@@ -39,12 +39,12 @@ export function BrandTransformation() {
             <p className="text-center text-xs font-bold uppercase tracking-widest">Brand Transformation</p>
           </div>
 
-          <div className="rounded-chunky border-2 border-brand-red bg-brand-navy p-6">
-            <p className="font-display text-xl uppercase tracking-wide text-brand-red">After</p>
+          <div className="rounded-chunky border-2 border-green-500 bg-brand-navy p-6">
+            <p className="font-display text-xl uppercase tracking-wide text-green-500">After</p>
             <ul className="mt-4 space-y-2">
               {after.map((item) => (
                 <li key={item} className="flex items-center gap-2 text-sm text-brand-cream/90">
-                  <Check className="h-4 w-4 shrink-0 text-brand-red" aria-hidden="true" />
+                  <Check className="h-4 w-4 shrink-0 text-green-500" aria-hidden="true" />
                   {item}
                 </li>
               ))}
