@@ -78,8 +78,11 @@ export default function ServicesPage() {
             </div>
           ))}
         </div>
-        <div className="mt-12">
-          <CTAButton href="/packages">View Packages</CTAButton>
+        <div className="mt-12 flex flex-wrap gap-4">
+          <CTAButton href="/#free-brand-review">Get a Free Quote</CTAButton>
+          <CTAButton href="/packages" variant="inverse">
+            View Packages
+          </CTAButton>
         </div>
       </Container>
     </>

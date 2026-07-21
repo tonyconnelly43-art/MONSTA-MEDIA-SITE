@@ -80,7 +80,7 @@ export default function PackagesPage() {
                 ))}
               </ul>
               <div className="mt-8">
-                <CTAButton href="/services">Get Started</CTAButton>
+                <CTAButton href="/#free-brand-review">Get Started</CTAButton>
               </div>
             </div>
           ))}

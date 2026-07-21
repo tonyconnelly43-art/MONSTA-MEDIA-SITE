@@ -38,7 +38,7 @@ export function MobileNav() {
             </Link>
           ))}
           <Link
-            href="/packages"
+            href="/#free-brand-review"
             onClick={() => setOpen(false)}
             className="mt-2 rounded-chunky bg-brand-red px-4 py-3 text-center font-display uppercase tracking-wide text-white"
           >

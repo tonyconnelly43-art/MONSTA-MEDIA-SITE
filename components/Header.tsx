@@ -25,7 +25,7 @@ export function Header() {
           ))}
         </nav>
         <div className="hidden md:block">
-          <CTAButton href="/packages">Get a Quote</CTAButton>
+          <CTAButton href="/#free-brand-review">Get a Quote</CTAButton>
         </div>
         <MobileNav />
       </Container>

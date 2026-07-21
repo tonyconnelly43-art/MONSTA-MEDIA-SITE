@@ -8,7 +8,7 @@ const after = ['Instant trust', 'Stands out', 'Charges more', 'Gets chosen'];
 
 export function BrandTransformation() {
   return (
-    <section className="bg-brand-navy-light py-20 text-white">
+    <section id="free-brand-review" className="bg-brand-navy-light py-20 text-white">
       <Container>
         <div className="text-center">
           <h2 className="font-display text-3xl text-white md:text-4xl">Show Up Like The Obvious Choice</h2>

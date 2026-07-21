@@ -34,7 +34,7 @@ export function KeywordLandingPage({ page }: { page: BrandingPage }) {
           <h1 className="mt-4 max-w-3xl font-display text-4xl text-white md:text-5xl">{page.h1}</h1>
           <p className="mt-6 max-w-2xl text-lg text-brand-cream/90">{page.intro}</p>
           <div className="mt-8">
-            <CTAButton href="/packages">Get a Free Quote</CTAButton>
+            <CTAButton href="/#free-brand-review">Get a Free Quote</CTAButton>
           </div>
         </Container>
       </section>
@@ -68,7 +68,7 @@ export function KeywordLandingPage({ page }: { page: BrandingPage }) {
             Ready to build a brand that matches your work?
           </h2>
           <div className="mt-6 flex justify-center">
-            <CTAButton href="/packages">Get Your Free Quote</CTAButton>
+            <CTAButton href="/#free-brand-review">Get Your Free Quote</CTAButton>
           </div>
         </Container>
       </section>

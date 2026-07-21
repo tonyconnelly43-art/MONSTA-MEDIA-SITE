@@ -78,9 +78,9 @@ export default function HomePage() {
               they do &mdash; logos, van wraps, uniforms, and websites that get you noticed and get you hired.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <CTAButton href="/packages">See Packages</CTAButton>
-              <CTAButton href="/services" variant="secondary">
-                Explore Services
+              <CTAButton href="/#free-brand-review">Get a Free Quote</CTAButton>
+              <CTAButton href="/packages" variant="secondary">
+                See Packages
               </CTAButton>
             </div>
           </div>
@@ -167,7 +167,7 @@ export default function HomePage() {
             page.
           </p>
           <div className="mt-8 flex justify-center">
-            <CTAButton href="/packages">Get Your Free Quote</CTAButton>
+            <CTAButton href="/#free-brand-review">Get Your Free Quote</CTAButton>
           </div>
         </Container>
       </section>
