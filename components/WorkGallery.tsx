@@ -9,7 +9,7 @@ export function WorkGallery({ items }: { items: WorkItem[] }) {
           key={item.slug}
           className="group overflow-hidden rounded-chunky border-2 border-brand-navy/10 bg-white transition-colors hover:border-brand-red"
         >
-          <div className="relative aspect-[11/6] overflow-hidden">
+          <div className="relative aspect-[4500/3972] overflow-hidden">
             <Image
               src={item.image}
               alt={`${item.name} van wrap design by Monsta Media & Design`}
