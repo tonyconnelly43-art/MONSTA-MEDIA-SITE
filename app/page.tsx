@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { MapPin, Palette, Shirt, Truck, Zap, Globe } from 'lucide-react';
 import { Container } from '@/components/Container';
@@ -71,10 +72,24 @@ export default function HomePage() {
               </CTAButton>
             </div>
           </div>
-          <div className="flex justify-center">
-            <div className="relative flex h-72 w-72 items-center justify-center rounded-full bg-white/5 md:h-80 md:w-80">
-              <MonsterMascot className="h-52 w-52 drop-shadow-2xl md:h-60 md:w-60" />
+          <div className="flex flex-col items-center">
+            <div className="relative w-full max-w-lg overflow-hidden rounded-chunky border-2 border-brand-red/40 shadow-2xl">
+              <Image
+                src="/van-wrap-true-north.png"
+                alt="True North Heating & Cooling service van with a full custom wrap design by Monsta Media & Design, featuring a bold polar bear mascot and bright teal and navy branding"
+                width={1683}
+                height={934}
+                priority
+                sizes="(min-width: 768px) 32rem, 90vw"
+                className="h-auto w-full"
+              />
+              <div className="absolute -bottom-4 -right-4 flex h-16 w-16 items-center justify-center rounded-full border-4 border-brand-navy bg-brand-red shadow-lg">
+                <MonsterMascot className="h-10 w-10" />
+              </div>
             </div>
+            <p className="mt-6 text-center text-xs font-semibold uppercase tracking-widest text-brand-cream/60">
+              Real Client Work &mdash; Van Wrap Design by Monsta Media &amp; Design
+            </p>
           </div>
         </Container>
         <div className="relative border-t border-white/10 bg-brand-navy-light/60">
