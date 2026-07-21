@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0A1930" />
+  <circle cx="220" cy="315" r="120" fill="#D62828" />
+  <circle cx="180" cy="290" r="26" fill="#FFF7EC" />
+  <circle cx="260" cy="290" r="26" fill="#FFF7EC" />
+  <circle cx="180" cy="290" r="11" fill="#0A1930" />
+  <circle cx="260" cy="290" r="11" fill="#0A1930" />
+  <text x="400" y="290" font-family="Arial, sans-serif" font-size="56" font-weight="bold" fill="#FFFFFF">Monsta Media &amp; Design</text>
+  <text x="400" y="350" font-family="Arial, sans-serif" font-size="32" fill="#D62828">Branding that eats the competition.</text>
+</svg>
