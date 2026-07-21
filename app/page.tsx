@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { MapPin, Palette, Shirt, Truck, Zap, Globe } from 'lucide-react';
 import { Container } from '@/components/Container';
 import { CTAButton } from '@/components/CTAButton';
 import { MonsterMascot } from '@/components/MonsterMascot';
@@ -14,33 +15,51 @@ export const metadata: Metadata = buildMetadata({
 
 const services = [
   {
+    icon: Palette,
     title: 'Logo & Brand Identity',
     body: 'A monster-tough logo, color system, and brand guide that makes your trucks, uniforms, and signage instantly recognizable.',
   },
   {
+    icon: Truck,
     title: 'Van & Fleet Wraps',
     body: 'Full and partial van wrap design built for HVAC, plumbing, electrical, and contractor fleets that need to turn heads on every job.',
   },
   {
+    icon: Globe,
     title: 'Websites & SEO',
     body: 'Fast, mobile-first websites built to rank for the home service searches your customers are already typing into Google.',
   },
   {
+    icon: Shirt,
     title: 'Uniforms & Print',
     body: 'Uniform design, business cards, yard signs, and print collateral that keep your brand consistent from the truck to the doorstep.',
   },
 ];
 
+const valueProps = [
+  { icon: MapPin, label: 'Local to Cleveland & Northfield, OH' },
+  { icon: Zap, label: 'Built for HVAC, Plumbing & Trades' },
+  { icon: Palette, label: 'One Brand, Every Touchpoint' },
+];
+
 export default function HomePage() {
   return (
     <>
-      <section className="bg-brand-navy text-white">
-        <Container className="grid items-center gap-10 py-20 md:grid-cols-2">
+      <section className="relative overflow-hidden bg-brand-navy text-white">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 text-brand-red/10 bg-monster-dots"
+        />
+        <Container className="relative grid items-center gap-10 py-20 md:grid-cols-2 md:py-28">
           <div>
-            <h1 className="font-display text-5xl leading-tight text-white md:text-6xl">
+            <span className="inline-flex items-center gap-2 rounded-full border border-brand-red/60 bg-brand-red/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-brand-red">
+              <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
+              Cleveland &amp; Northfield, Ohio
+            </span>
+            <h1 className="mt-5 font-display text-5xl leading-[1.05] text-white md:text-6xl">
               Branding That Eats The Competition
             </h1>
-            <p className="mt-6 text-lg text-brand-cream/90">
+            <p className="mt-6 max-w-xl text-lg text-brand-cream/90">
               Monsta Media &amp; Design is a branding and design agency in Northfield, Ohio, helping home
               service and trades businesses across Cleveland and Northeast Ohio look as good as the work
               they do &mdash; logos, van wraps, uniforms, and websites that get you noticed and get you hired.
@@ -53,19 +72,40 @@ export default function HomePage() {
             </div>
           </div>
           <div className="flex justify-center">
-            <MonsterMascot className="h-56 w-56 drop-shadow-2xl" />
+            <div className="relative flex h-72 w-72 items-center justify-center rounded-full bg-white/5 md:h-80 md:w-80">
+              <MonsterMascot className="h-52 w-52 drop-shadow-2xl md:h-60 md:w-60" />
+            </div>
           </div>
         </Container>
+        <div className="relative border-t border-white/10 bg-brand-navy-light/60">
+          <Container className="flex flex-wrap items-center justify-center gap-x-10 gap-y-3 py-5 text-sm font-semibold text-brand-cream/90 md:justify-between">
+            {valueProps.map((item) => (
+              <span key={item.label} className="flex items-center gap-2">
+                <item.icon className="h-4 w-4 text-brand-red" aria-hidden="true" />
+                {item.label}
+              </span>
+            ))}
+          </Container>
+        </div>
       </section>
 
       <section className="py-20">
         <Container>
           <h2 className="font-display text-3xl text-brand-navy md:text-4xl">What We Do</h2>
+          <p className="mt-3 max-w-xl text-brand-navy/70">
+            Everything your brand needs, built as one connected system.
+          </p>
           <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {services.map((service) => (
-              <div key={service.title} className="rounded-chunky border-2 border-brand-navy/10 p-6">
-                <h3 className="font-display text-xl text-brand-red">{service.title}</h3>
-                <p className="mt-3 text-sm text-brand-navy/80">{service.body}</p>
+              <div
+                key={service.title}
+                className="rounded-chunky border-2 border-brand-navy/10 p-6 transition-colors hover:border-brand-red"
+              >
+                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-red/10 text-brand-red">
+                  <service.icon className="h-5 w-5" aria-hidden="true" />
+                </div>
+                <h3 className="mt-4 font-display text-xl text-brand-navy">{service.title}</h3>
+                <p className="mt-3 text-sm text-brand-navy/70">{service.body}</p>
               </div>
             ))}
           </div>
@@ -85,7 +125,7 @@ export default function HomePage() {
             </Link>{' '}
             page.
           </p>
-          <div className="mt-8">
+          <div className="mt-8 flex justify-center">
             <CTAButton href="/packages">Get Your Free Quote</CTAButton>
           </div>
         </Container>

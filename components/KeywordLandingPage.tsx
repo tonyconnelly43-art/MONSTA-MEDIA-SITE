@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Container } from './Container';
 import { CTAButton } from './CTAButton';
 import { JsonLd } from './JsonLd';
@@ -8,7 +9,7 @@ export function KeywordLandingPage({ page }: { page: BrandingPage }) {
   const path = `/branding/${page.slug}`;
 
   return (
-    <Container className="py-20">
+    <>
       <JsonLd data={serviceJsonLd({ name: page.keyword, description: page.metaDescription, path })} />
       <JsonLd
         data={breadcrumbJsonLd([
@@ -17,42 +18,60 @@ export function KeywordLandingPage({ page }: { page: BrandingPage }) {
           { name: page.h1, path },
         ])}
       />
-      <nav aria-label="Breadcrumb" className="text-sm text-brand-navy/60">
-        <a href="/" className="hover:text-brand-red">
-          Home
-        </a>{' '}
-        /{' '}
-        <a href="/branding" className="hover:text-brand-red">
-          Branding
-        </a>{' '}
-        / <span>{page.h1}</span>
-      </nav>
-      <h1 className="mt-4 font-display text-4xl text-brand-navy md:text-5xl">{page.h1}</h1>
-      <p className="mt-6 max-w-2xl text-lg text-brand-navy/80">{page.intro}</p>
-      <div className="mt-6">
-        <CTAButton href="/packages">Get a Free Quote</CTAButton>
-      </div>
 
-      <div className="mt-16 space-y-10">
-        {page.sections.map((section) => (
-          <div key={section.heading}>
-            <h2 className="font-display text-2xl text-brand-red">{section.heading}</h2>
-            <p className="mt-3 max-w-2xl text-brand-navy/80">{section.body}</p>
+      <section className="bg-brand-navy text-white">
+        <Container className="py-16 md:py-20">
+          <nav aria-label="Breadcrumb" className="text-sm text-brand-cream/60">
+            <Link href="/" className="hover:text-brand-red">
+              Home
+            </Link>{' '}
+            /{' '}
+            <Link href="/branding" className="hover:text-brand-red">
+              Branding
+            </Link>{' '}
+            / <span className="text-brand-cream/90">{page.h1}</span>
+          </nav>
+          <h1 className="mt-4 max-w-3xl font-display text-4xl text-white md:text-5xl">{page.h1}</h1>
+          <p className="mt-6 max-w-2xl text-lg text-brand-cream/90">{page.intro}</p>
+          <div className="mt-8">
+            <CTAButton href="/packages">Get a Free Quote</CTAButton>
           </div>
-        ))}
-      </div>
+        </Container>
+      </section>
 
-      <div className="mt-16">
-        <h2 className="font-display text-2xl text-brand-red">Frequently Asked Questions</h2>
-        <dl className="mt-6 space-y-6">
-          {page.faqs.map((faq) => (
-            <div key={faq.question}>
-              <dt className="font-semibold text-brand-navy">{faq.question}</dt>
-              <dd className="mt-1 max-w-2xl text-brand-navy/80">{faq.answer}</dd>
+      <Container className="py-16">
+        <div className="grid gap-10 md:grid-cols-2">
+          {page.sections.map((section) => (
+            <div key={section.heading} className="rounded-chunky border-2 border-brand-navy/10 p-8">
+              <h2 className="font-display text-2xl text-brand-red">{section.heading}</h2>
+              <p className="mt-3 text-brand-navy/80">{section.body}</p>
             </div>
           ))}
-        </dl>
-      </div>
-    </Container>
+        </div>
+
+        <div className="mt-16">
+          <h2 className="font-display text-2xl text-brand-navy">Frequently Asked Questions</h2>
+          <dl className="mt-6 space-y-6">
+            {page.faqs.map((faq) => (
+              <div key={faq.question} className="border-b border-brand-navy/10 pb-6">
+                <dt className="font-display text-lg text-brand-navy">{faq.question}</dt>
+                <dd className="mt-2 max-w-2xl text-brand-navy/70">{faq.answer}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </Container>
+
+      <section className="bg-brand-cream py-16">
+        <Container className="text-center">
+          <h2 className="font-display text-2xl text-brand-navy md:text-3xl">
+            Ready to build a brand that matches your work?
+          </h2>
+          <div className="mt-6 flex justify-center">
+            <CTAButton href="/packages">Get Your Free Quote</CTAButton>
+          </div>
+        </Container>
+      </section>
+    </>
   );
 }

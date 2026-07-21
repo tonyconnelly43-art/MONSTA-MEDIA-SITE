@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 import { Container } from '@/components/Container';
 import { getAllPosts } from '@/lib/blog';
 import { buildMetadata } from '@/lib/seo';
@@ -15,25 +16,37 @@ export default function BlogIndexPage() {
   const posts = getAllPosts();
 
   return (
-    <Container className="py-20">
-      <h1 className="font-display text-4xl text-brand-navy md:text-5xl">Blog</h1>
-      <p className="mt-4 max-w-2xl text-brand-navy/80">
-        Branding, van wrap, and marketing advice for home service and trades businesses.
-      </p>
-      <div className="mt-12 space-y-10">
-        {posts.map((post) => (
-          <article key={post.slug} className="border-b border-brand-navy/10 pb-10 last:border-0">
-            <h2 className="font-display text-2xl text-brand-red">
-              <Link href={`/blog/${post.slug}`}>{post.title}</Link>
-            </h2>
-            <p className="mt-1 text-xs uppercase tracking-wide text-brand-navy/50">{post.date}</p>
-            <p className="mt-3 max-w-2xl text-brand-navy/80">{post.excerpt}</p>
-            <Link href={`/blog/${post.slug}`} className="mt-3 inline-block font-semibold text-brand-red underline">
-              Read more
+    <>
+      <section className="bg-brand-navy text-white">
+        <Container className="py-16 md:py-20">
+          <h1 className="font-display text-4xl text-white md:text-5xl">Blog</h1>
+          <p className="mt-4 max-w-2xl text-brand-cream/90">
+            Branding, van wrap, and marketing advice for home service and trades businesses.
+          </p>
+        </Container>
+      </section>
+
+      <Container className="py-16">
+        <div className="grid gap-6 md:grid-cols-2">
+          {posts.map((post) => (
+            <Link
+              key={post.slug}
+              href={`/blog/${post.slug}`}
+              className="group rounded-chunky border-2 border-brand-navy/10 p-6 transition-colors hover:border-brand-red"
+            >
+              <p className="text-xs font-semibold uppercase tracking-wide text-brand-navy/50">{post.date}</p>
+              <h2 className="mt-2 font-display text-xl text-brand-navy group-hover:text-brand-red">
+                {post.title}
+              </h2>
+              <p className="mt-3 text-sm text-brand-navy/70">{post.excerpt}</p>
+              <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-red">
+                Read more
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+              </span>
             </Link>
-          </article>
-        ))}
-      </div>
-    </Container>
+          ))}
+        </div>
+      </Container>
+    </>
   );
 }

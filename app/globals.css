@@ -7,5 +7,23 @@ html {
 }
 
 body {
-  @apply bg-white text-brand-navy;
+  @apply bg-white text-brand-navy antialiased;
+}
+
+.font-display {
+  letter-spacing: 0.02em;
+}
+
+::selection {
+  background-color: #d62828;
+  color: #fff7ec;
+}
+
+.bg-diagonal-navy {
+  clip-path: polygon(0 12%, 100% 0, 100% 100%, 0% 100%);
+}
+
+.bg-monster-dots {
+  background-image: radial-gradient(currentColor 1.5px, transparent 1.5px);
+  background-size: 18px 18px;
 }
