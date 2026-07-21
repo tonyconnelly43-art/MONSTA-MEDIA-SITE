@@ -15,21 +15,21 @@ export const metadata: Metadata = buildMetadata({
 const packages = [
   {
     name: 'Starter Brand',
-    price: '$2,500',
+    price: 'Starting at $2,250',
     description: 'A clean, professional logo and brand starter kit for new or rebranding trades businesses.',
     features: ['Custom brand design', 'Color palette & fonts', 'Business card design', '2 rounds of revisions'],
     featured: false,
   },
   {
     name: 'Fleet & Brand',
-    price: '$4,500',
+    price: 'Starting at $4,250',
     description: 'Everything in Starter Brand, plus van wrap design and uniform artwork built to match.',
     features: ['Everything in Starter Brand', 'Van/fleet wrap design', 'Uniform & apparel design', 'Brand style guide'],
     featured: true,
   },
   {
     name: 'Full Monster',
-    price: 'Starting at $7,500',
+    price: 'Starting at $7,250',
     description: 'Our complete package: brand identity, fleet wraps, uniforms, and a custom SEO-ready website.',
     features: [
       'Everything in Fleet & Brand',
