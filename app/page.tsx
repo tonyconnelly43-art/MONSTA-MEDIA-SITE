@@ -47,19 +47,17 @@ export default function HomePage() {
   return (
     <>
       <section className="relative min-h-[560px] overflow-hidden bg-brand-navy text-white md:min-h-[680px]">
-        <div className="absolute inset-0">
-          <div className="absolute inset-y-0 right-0 w-[220%] sm:w-[170%] md:w-[135%]">
-            <Image
-              src="/van-wrap-true-north.png"
-              alt="True North Heating & Cooling service van with a full custom wrap design by Monsta Media & Design, featuring a bold polar bear mascot and bright teal and navy branding"
-              fill
-              priority
-              sizes="220vw"
-              className="object-cover object-center"
-            />
-          </div>
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/90 to-brand-navy/30" />
-          <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-transparent to-transparent" />
+        <div className="absolute inset-y-0 right-0 hidden w-[62%] md:block">
+          <Image
+            src="/van-wrap-true-north.png"
+            alt="True North Heating & Cooling service van with a full custom wrap design by Monsta Media & Design, featuring a bold polar bear mascot and bright teal and navy branding"
+            fill
+            priority
+            sizes="62vw"
+            className="object-cover object-[65%_center]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/70 via-25% to-transparent to-55%" />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/40 via-transparent to-transparent" />
         </div>
 
         <Container className="relative py-20 md:py-32">
