@@ -1,35 +1,19 @@
-'use client';
-
-import Script from 'next/script';
+import { MessageCircle } from 'lucide-react';
 
 // Your Facebook Page ID, from facebook.com/profile.php?id=...
 const FACEBOOK_PAGE_ID = '61559049634674';
-// App ID from developers.facebook.com > App settings > Basic
-const FACEBOOK_APP_ID = '1332570589040314';
 
 export function FacebookChatWidget() {
   return (
-    <>
-      <div id="fb-root" />
-      <div
-        // Meta's SDK reads plain HTML attributes (page_id, attribution) on this div,
-        // which aren't valid typed JSX props -- rendered as raw HTML to match their docs exactly.
-        dangerouslySetInnerHTML={{
-          __html: `<div class="fb-customerchat" attribution="biz_inbox" page_id="${FACEBOOK_PAGE_ID}"></div>`,
-        }}
-      />
-      <Script id="fb-chat-init" strategy="afterInteractive">
-        {`
-          window.fbAsyncInit = function () {
-            FB.init({ appId: '${FACEBOOK_APP_ID}', xfbml: true, version: 'v20.0' });
-          };
-        `}
-      </Script>
-      <Script
-        id="fb-chat-sdk"
-        strategy="afterInteractive"
-        src="https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js"
-      />
-    </>
+    <a
+      href={`https://m.me/${FACEBOOK_PAGE_ID}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat with us on Messenger"
+      className="fixed bottom-5 right-5 z-50 flex items-center gap-2 rounded-full bg-brand-red px-5 py-3 font-display text-sm uppercase tracking-wide text-white shadow-lg transition-transform hover:scale-105"
+    >
+      <MessageCircle className="h-5 w-5" aria-hidden="true" />
+      Chat With Us
+    </a>
   );
 }
