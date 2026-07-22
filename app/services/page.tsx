@@ -98,7 +98,7 @@ export default function ServicesPage() {
                     sizes="(min-width: 768px) 224px, 160px"
                     className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-white via-white/60 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-white via-white/30 via-20% to-transparent to-55%" />
                 </div>
               )}
 
@@ -111,13 +111,13 @@ export default function ServicesPage() {
                     height={242}
                     className="relative h-10 w-auto md:h-12"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-white via-white/10 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-white to-transparent to-40%" />
                 </div>
               )}
 
               {service.imageMode === null && (
                 <div className="absolute inset-y-0 right-0 hidden w-40 items-center justify-center sm:flex md:w-56">
-                  <div className="absolute inset-0 bg-gradient-to-r from-white via-white/40 to-brand-red/10" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-white via-white/15 via-25% to-brand-red/10" />
                   <service.icon className="relative h-16 w-16 text-brand-red/25 md:h-20 md:w-20" aria-hidden="true" />
                 </div>
               )}
