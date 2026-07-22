@@ -32,8 +32,8 @@ const services = [
     icon: Shirt,
     title: 'Uniform & Apparel Design',
     body: 'Shirt, jacket, and hat artwork that keeps your crew looking sharp and your brand consistent on every job site.',
-    image: null,
-    imageMode: null,
+    image: '/services-uniform.jpg',
+    imageMode: 'photo' as const,
   },
   {
     icon: Globe,
@@ -112,13 +112,6 @@ export default function ServicesPage() {
                     className="relative h-10 w-auto md:h-12"
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-white to-transparent to-40%" />
-                </div>
-              )}
-
-              {service.imageMode === null && (
-                <div className="absolute inset-y-0 right-0 hidden w-40 items-center justify-center sm:flex md:w-56">
-                  <div className="absolute inset-0 bg-gradient-to-r from-white via-white/15 via-25% to-brand-red/10" />
-                  <service.icon className="relative h-16 w-16 text-brand-red/25 md:h-20 md:w-20" aria-hidden="true" />
                 </div>
               )}
             </div>
