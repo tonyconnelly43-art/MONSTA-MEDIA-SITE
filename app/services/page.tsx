@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { Globe, Palette, Printer, Shirt, Truck } from 'lucide-react';
 import { Container } from '@/components/Container';
 import { CTAButton } from '@/components/CTAButton';
@@ -17,26 +18,36 @@ const services = [
     icon: Palette,
     title: 'Logo & Brand Identity Design',
     body: 'We design logos and full brand identity systems built to work everywhere your business shows up: trucks, signage, uniforms, and your website.',
+    image: '/logo-monsta-dark-bg.png',
+    imageMode: 'logo' as const,
   },
   {
     icon: Truck,
     title: 'Van & Fleet Wrap Design',
     body: 'Full and partial van wrap layouts designed to be legible at 40 mph and consistent across every vehicle in your fleet.',
+    image: '/work/kraken-plumbing.jpg',
+    imageMode: 'photo' as const,
   },
   {
     icon: Shirt,
     title: 'Uniform & Apparel Design',
     body: 'Shirt, jacket, and hat artwork that keeps your crew looking sharp and your brand consistent on every job site.',
+    image: null,
+    imageMode: null,
   },
   {
     icon: Globe,
     title: 'Website Design & SEO',
     body: 'Mobile-first websites built on modern, fast frameworks and optimized to rank for the local searches your customers use.',
+    image: null,
+    imageMode: null,
   },
   {
     icon: Printer,
     title: 'Print & Signage',
     body: 'Business cards, yard signs, door hangers, and vehicle signage designed to match your full brand system.',
+    image: null,
+    imageMode: null,
   },
 ];
 
@@ -66,15 +77,50 @@ export default function ServicesPage() {
           {services.map((service) => (
             <div
               key={service.title}
-              className="flex flex-col gap-4 rounded-chunky border-2 border-brand-navy/10 p-8 sm:flex-row sm:items-center"
+              className="relative flex flex-col gap-4 overflow-hidden rounded-chunky border-2 border-brand-navy/10 p-8 sm:flex-row sm:items-center"
             >
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand-red/10 text-brand-red">
-                <service.icon className="h-6 w-6" aria-hidden="true" />
+              <div className="relative z-10 flex flex-1 flex-col gap-4 sm:flex-row sm:items-center sm:pr-32 md:pr-44">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand-red/10 text-brand-red">
+                  <service.icon className="h-6 w-6" aria-hidden="true" />
+                </div>
+                <div>
+                  <h2 className="font-display text-2xl text-brand-navy">{service.title}</h2>
+                  <p className="mt-2 max-w-2xl text-brand-navy/70">{service.body}</p>
+                </div>
               </div>
-              <div>
-                <h2 className="font-display text-2xl text-brand-navy">{service.title}</h2>
-                <p className="mt-2 max-w-2xl text-brand-navy/70">{service.body}</p>
-              </div>
+
+              {service.imageMode === 'photo' && service.image && (
+                <div className="absolute inset-y-0 right-0 hidden w-40 sm:block md:w-56">
+                  <Image
+                    src={service.image}
+                    alt={`${service.title} example by Monsta Media & Design`}
+                    fill
+                    sizes="(min-width: 768px) 224px, 160px"
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-white via-white/60 to-transparent" />
+                </div>
+              )}
+
+              {service.imageMode === 'logo' && service.image && (
+                <div className="absolute inset-y-0 right-0 hidden w-40 items-center justify-center bg-brand-navy sm:flex md:w-56">
+                  <Image
+                    src={service.image}
+                    alt="Monsta Media & Design logo"
+                    width={800}
+                    height={242}
+                    className="relative h-10 w-auto md:h-12"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-white via-white/10 to-transparent" />
+                </div>
+              )}
+
+              {service.imageMode === null && (
+                <div className="absolute inset-y-0 right-0 hidden w-40 items-center justify-center sm:flex md:w-56">
+                  <div className="absolute inset-0 bg-gradient-to-r from-white via-white/40 to-brand-red/10" />
+                  <service.icon className="relative h-16 w-16 text-brand-red/25 md:h-20 md:w-20" aria-hidden="true" />
+                </div>
+              )}
             </div>
           ))}
         </div>
