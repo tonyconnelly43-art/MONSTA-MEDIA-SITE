@@ -18,9 +18,9 @@ export default function BlogIndexPage() {
   return (
     <>
       <section className="bg-brand-navy text-white">
-        <Container className="py-16 md:py-20">
+        <Container className="py-16 text-center md:py-20">
           <h1 className="font-display text-4xl text-white md:text-5xl">Blog</h1>
-          <p className="mt-4 max-w-2xl text-brand-cream/90">
+          <p className="mx-auto mt-4 max-w-2xl text-brand-cream/90">
             Branding, van wrap, and marketing advice for home service and trades businesses.
           </p>
         </Container>

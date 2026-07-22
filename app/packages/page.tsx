@@ -45,14 +45,14 @@ export default function PackagesPage() {
   return (
     <>
       <section className="bg-brand-navy text-white">
-        <Container className="py-16 md:py-20">
+        <Container className="py-16 text-center md:py-20">
           <h1 className="font-display text-4xl text-white md:text-5xl">Packages</h1>
-          <p className="mt-4 max-w-2xl text-brand-cream/90">
+          <p className="mx-auto mt-4 max-w-2xl text-brand-cream/90">
             Every package is built for home service and trades businesses that want a brand as bold and
             reliable as their work. Pricing is customized to your business &mdash; reach out for a free
             quote.
           </p>
-          <div className="mt-6">
+          <div className="mt-6 flex justify-center">
             <GoogleReviewsBadge />
           </div>
         </Container>

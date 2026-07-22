@@ -12,7 +12,7 @@ export const metadata: Metadata = buildMetadata({
 export default function TermsPage() {
   return (
     <Container className="py-20">
-      <h1 className="font-display text-4xl text-brand-navy md:text-5xl">Terms &amp; Conditions</h1>
+      <h1 className="text-center font-display text-4xl text-brand-navy md:text-5xl">Terms &amp; Conditions</h1>
 
       <div className="mt-10 max-w-2xl space-y-8 text-brand-navy/80">
         <div>

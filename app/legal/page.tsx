@@ -41,7 +41,7 @@ We do not provide legal, financial, tax, or business strategy advice. Please con
 export default function LegalPage() {
   return (
     <Container className="py-20">
-      <h1 className="font-display text-4xl text-brand-navy md:text-5xl">Legal Disclaimer</h1>
+      <h1 className="text-center font-display text-4xl text-brand-navy md:text-5xl">Legal Disclaimer</h1>
       <div className="mt-10 max-w-2xl space-y-8 text-brand-navy/80">
         {sections.map((section) => (
           <div key={section.heading}>

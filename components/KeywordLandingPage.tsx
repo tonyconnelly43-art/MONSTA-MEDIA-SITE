@@ -20,7 +20,7 @@ export function KeywordLandingPage({ page }: { page: BrandingPage }) {
       />
 
       <section className="bg-brand-navy text-white">
-        <Container className="py-16 md:py-20">
+        <Container className="py-16 text-center md:py-20">
           <nav aria-label="Breadcrumb" className="text-sm text-brand-cream/60">
             <Link href="/" className="hover:text-brand-red">
               Home
@@ -31,9 +31,9 @@ export function KeywordLandingPage({ page }: { page: BrandingPage }) {
             </Link>{' '}
             / <span className="text-brand-cream/90">{page.h1}</span>
           </nav>
-          <h1 className="mt-4 max-w-3xl font-display text-4xl text-white md:text-5xl">{page.h1}</h1>
-          <p className="mt-6 max-w-2xl text-lg text-brand-cream/90">{page.intro}</p>
-          <div className="mt-8">
+          <h1 className="mx-auto mt-4 max-w-3xl font-display text-4xl text-white md:text-5xl">{page.h1}</h1>
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-brand-cream/90">{page.intro}</p>
+          <div className="mt-8 flex justify-center">
             <CTAButton href="/#free-brand-review">Get a Free Quote</CTAButton>
           </div>
         </Container>

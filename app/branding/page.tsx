@@ -16,11 +16,11 @@ export default function BrandingHubPage() {
   return (
     <>
       <section className="bg-brand-navy text-white">
-        <Container className="py-16 md:py-20">
-          <h1 className="font-display text-4xl text-white md:text-5xl">
+        <Container className="py-16 text-center md:py-20">
+          <h1 className="mx-auto max-w-3xl font-display text-4xl text-white md:text-5xl">
             Branding &amp; Van Wrap Design for Home Service Companies
           </h1>
-          <p className="mt-4 max-w-2xl text-brand-cream/90">
+          <p className="mx-auto mt-4 max-w-2xl text-brand-cream/90">
             Monsta Media &amp; Design builds brands for HVAC, plumbing, electrical, roofing, and other home
             service and trades businesses across Cleveland and Northfield, Ohio. Explore how we approach
             branding for your specific need below.

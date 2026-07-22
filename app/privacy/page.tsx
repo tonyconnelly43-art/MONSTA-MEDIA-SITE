@@ -12,8 +12,8 @@ export const metadata: Metadata = buildMetadata({
 export default function PrivacyPage() {
   return (
     <Container className="py-20">
-      <h1 className="font-display text-4xl text-brand-navy md:text-5xl">Privacy Policy</h1>
-      <p className="mt-6 max-w-2xl text-brand-navy/80">
+      <h1 className="text-center font-display text-4xl text-brand-navy md:text-5xl">Privacy Policy</h1>
+      <p className="mx-auto mt-6 max-w-2xl text-center text-brand-navy/80">
         Your privacy matters to us. This Privacy Policy explains how {siteConfig.name} collects, uses, and
         protects your personal information when you visit our website, interact with our content, or use
         our services.
