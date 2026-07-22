@@ -40,7 +40,7 @@ export function BrandTransformation({ selectedPackage }: { selectedPackage?: str
             </div>
           </div>
 
-          <div className="flex flex-row items-center justify-center gap-2 py-2 text-brand-red md:flex-col md:py-0">
+          <div className="flex flex-row items-center justify-center gap-2 py-2 text-white md:flex-col md:py-0">
             <ArrowRight className="h-8 w-8 rotate-90 md:rotate-0" aria-hidden="true" />
             <p className="text-center text-xs font-bold uppercase tracking-widest">Brand Transformation</p>
           </div>
