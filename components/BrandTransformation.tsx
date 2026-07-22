@@ -29,13 +29,13 @@ export function BrandTransformation({ selectedPackage }: { selectedPackage?: str
                 </li>
               ))}
             </ul>
-            <div className="relative mt-5 aspect-[16/10] overflow-hidden rounded-lg bg-white/5">
+            <div className="relative mt-5 aspect-[16/10] overflow-hidden rounded-lg bg-white">
               <Image
                 src="/before-white-van.jpg"
                 alt="Unbranded plain white service van, before Monsta Media & Design branding"
                 fill
                 sizes="(min-width: 768px) 33vw, 90vw"
-                className="object-cover"
+                className="object-contain p-3"
               />
             </div>
           </div>
@@ -55,13 +55,13 @@ export function BrandTransformation({ selectedPackage }: { selectedPackage?: str
                 </li>
               ))}
             </ul>
-            <div className="relative mt-5 aspect-[16/10] overflow-hidden rounded-lg">
+            <div className="relative mt-5 aspect-[16/10] overflow-hidden rounded-lg bg-white">
               <Image
                 src="/after-air-command.jpg"
                 alt="Air Command HVAC branded van wrap by Monsta Media & Design"
                 fill
                 sizes="(min-width: 768px) 33vw, 90vw"
-                className="object-cover"
+                className="object-contain p-3"
               />
             </div>
           </div>
