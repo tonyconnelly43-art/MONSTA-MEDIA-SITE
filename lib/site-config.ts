@@ -16,8 +16,8 @@ export const siteConfig = {
   },
   serviceArea: ['Northfield, OH', 'Cleveland, OH', 'Akron, OH', 'Northeast Ohio'],
   social: {
-    facebook: 'https://www.facebook.com/monstamediaanddesign',
-    instagram: 'https://www.instagram.com/monstamediaanddesign',
+    facebook: 'https://www.facebook.com/profile.php?id=61559049634674',
+    instagram: 'https://www.instagram.com/monstamediaanddesign/',
   },
   googleReviewUrl: 'https://maps.app.goo.gl/oQuTGtcgNUvHSx3P9',
   colors: {
