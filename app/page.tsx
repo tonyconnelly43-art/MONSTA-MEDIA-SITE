@@ -82,9 +82,9 @@ export default async function HomePage({
               Branding That Eats The Competition
             </h1>
             <p className="mt-6 max-w-xl text-lg text-brand-cream/90">
-              Monsta Media &amp; Design is a branding and design agency in Northfield, Ohio, helping home
-              service and trades businesses across Cleveland and Northeast Ohio look as good as the work
-              they do &mdash; logos, van wraps, uniforms, and websites that get you noticed and get you hired.
+              Monsta Media &amp; Design builds bold logos, van wraps, uniforms, and websites for HVAC,
+              plumbing, electrical, and other home service businesses across Cleveland, Northfield, and
+              Northeast Ohio &mdash; branding that gets you noticed and gets you hired.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <CTAButton href="/#free-brand-review">Get a Free Quote</CTAButton>
@@ -155,7 +155,7 @@ export default async function HomePage({
           <div className="text-center">
             <h2 className="font-display text-3xl text-brand-navy md:text-4xl">Our Work</h2>
             <p className="mx-auto mt-3 max-w-xl text-brand-navy/70">
-              A few of the brands we&apos;ve built logos and van wraps for.
+              A few of the home service brands we&apos;ve transformed with bold logos and van wraps.
             </p>
           </div>
           <div className="mt-10">
