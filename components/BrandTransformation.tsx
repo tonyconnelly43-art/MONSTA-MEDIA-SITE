@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { ArrowRight, Truck, X, Check } from 'lucide-react';
+import { ArrowRight, X, Check } from 'lucide-react';
 import { Container } from './Container';
 import { BrandReviewForm } from './BrandReviewForm';
 import { GoogleReviewsBadge } from './GoogleReviewsBadge';
@@ -29,8 +29,14 @@ export function BrandTransformation({ selectedPackage }: { selectedPackage?: str
                 </li>
               ))}
             </ul>
-            <div className="mt-5 flex aspect-[16/10] items-center justify-center rounded-lg bg-white/5">
-              <Truck className="h-16 w-16 text-white/20" aria-hidden="true" />
+            <div className="relative mt-5 aspect-[16/10] overflow-hidden rounded-lg bg-white/5">
+              <Image
+                src="/before-white-van.jpg"
+                alt="Unbranded plain white service van, before Monsta Media & Design branding"
+                fill
+                sizes="(min-width: 768px) 33vw, 90vw"
+                className="object-cover"
+              />
             </div>
           </div>
 
@@ -51,11 +57,11 @@ export function BrandTransformation({ selectedPackage }: { selectedPackage?: str
             </ul>
             <div className="relative mt-5 aspect-[16/10] overflow-hidden rounded-lg">
               <Image
-                src="/work/air-command.jpg"
+                src="/after-air-command.jpg"
                 alt="Air Command HVAC branded van wrap by Monsta Media & Design"
                 fill
                 sizes="(min-width: 768px) 33vw, 90vw"
-                className="object-cover object-[50%_62%]"
+                className="object-cover"
               />
             </div>
           </div>

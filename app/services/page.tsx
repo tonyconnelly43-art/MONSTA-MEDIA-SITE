@@ -25,7 +25,7 @@ const services = [
     icon: Truck,
     title: 'Van & Fleet Wrap Design',
     body: 'Full and partial van wrap layouts designed to be legible at 40 mph and consistent across every vehicle in your fleet.',
-    image: '/work/kraken-plumbing.jpg',
+    image: '/services-van-wrap.jpg',
     imageMode: 'photo' as const,
   },
   {
@@ -39,15 +39,15 @@ const services = [
     icon: Globe,
     title: 'Website Design & SEO',
     body: 'Mobile-first websites built on modern, fast frameworks and optimized to rank for the local searches your customers use.',
-    image: null,
-    imageMode: null,
+    image: '/services-website-design.jpg',
+    imageMode: 'photo' as const,
   },
   {
     icon: Printer,
     title: 'Print & Signage',
     body: 'Business cards, yard signs, door hangers, and vehicle signage designed to match your full brand system.',
-    image: null,
-    imageMode: null,
+    image: '/services-print-signage.jpg',
+    imageMode: 'photo' as const,
   },
 ];
 
