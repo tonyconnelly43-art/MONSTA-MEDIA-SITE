@@ -63,9 +63,9 @@ export default function ServicesPage() {
         })}
       />
       <section className="bg-brand-navy text-white">
-        <Container className="py-16 md:py-20">
+        <Container className="py-16 text-center md:py-20">
           <h1 className="font-display text-4xl text-white md:text-5xl">Services</h1>
-          <p className="mt-4 max-w-2xl text-brand-cream/90">
+          <p className="mx-auto mt-4 max-w-2xl text-brand-cream/90">
             From the logo on your invoice to the wrap on your work van, we design every piece of your brand
             so it works together &mdash; and works for you.
           </p>
@@ -124,7 +124,7 @@ export default function ServicesPage() {
             </div>
           ))}
         </div>
-        <div className="mt-12 flex flex-wrap gap-4">
+        <div className="mt-12 flex flex-wrap justify-center gap-4">
           <CTAButton href="/#free-brand-review">Get a Free Quote</CTAButton>
           <CTAButton href="/packages" variant="inverse">
             View Packages
