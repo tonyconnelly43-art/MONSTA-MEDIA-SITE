@@ -8,7 +8,7 @@ import { primaryNav, siteConfig } from '@/lib/site-config';
 export function Header() {
   return (
     <header className="relative border-b-4 border-brand-red bg-brand-navy text-white">
-      <Container className="relative flex items-center justify-between py-3">
+      <Container className="relative flex items-center justify-between py-5">
         <Link href="/" className="flex items-center">
           <Image
             src="/logo-monsta-dark-bg.png"
@@ -16,7 +16,7 @@ export function Header() {
             width={800}
             height={242}
             priority
-            className="h-10 w-auto md:h-12"
+            className="h-12 w-auto md:h-16"
           />
         </Link>
         <nav aria-label="Primary" className="hidden items-center gap-7 md:flex">
