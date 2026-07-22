@@ -4,6 +4,8 @@ import Script from 'next/script';
 
 // Your Facebook Page ID, from facebook.com/profile.php?id=...
 const FACEBOOK_PAGE_ID = '61559049634674';
+// App ID from developers.facebook.com > App settings > Basic
+const FACEBOOK_APP_ID = '1332570589040314';
 
 export function FacebookChatWidget() {
   return (
@@ -19,7 +21,7 @@ export function FacebookChatWidget() {
       <Script id="fb-chat-init" strategy="afterInteractive">
         {`
           window.fbAsyncInit = function () {
-            FB.init({ xfbml: true, version: 'v20.0' });
+            FB.init({ appId: '${FACEBOOK_APP_ID}', xfbml: true, version: 'v20.0' });
           };
         `}
       </Script>
