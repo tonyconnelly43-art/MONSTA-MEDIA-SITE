@@ -11,6 +11,7 @@ import { ProcessSteps } from '@/components/ProcessSteps';
 import { WhyChooseMonsta } from '@/components/WhyChooseMonsta';
 import { WorkGallery } from '@/components/WorkGallery';
 import { buildMetadata } from '@/lib/seo';
+import { promos } from '@/lib/promos';
 import { workItems } from '@/lib/work';
 
 export const metadata: Metadata = buildMetadata({
@@ -52,9 +53,10 @@ const valueProps = [
 export default async function HomePage({
   searchParams,
 }: {
-  searchParams: Promise<{ package?: string }>;
+  searchParams: Promise<{ package?: string; promo?: string }>;
 }) {
-  const { package: selectedPackage } = await searchParams;
+  const { package: selectedPackage, promo } = await searchParams;
+  const promoLabel = promo ? promos[promo] : undefined;
 
   return (
     <>
@@ -148,7 +150,7 @@ export default async function HomePage({
 
       <WhyChooseMonsta />
 
-      <BrandTransformation selectedPackage={selectedPackage} />
+      <BrandTransformation selectedPackage={selectedPackage} promo={promo} promoLabel={promoLabel} />
 
       <section className="py-20">
         <Container>

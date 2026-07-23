@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/work',
     '/blog',
     '/branding',
+    '/rebrand-ohio',
     '/legal',
     '/privacy',
     '/terms-and-conditions',

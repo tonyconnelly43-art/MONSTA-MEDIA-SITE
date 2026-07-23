@@ -10,6 +10,7 @@ type Lead = {
   email: string;
   message: string;
   package: string;
+  promo: string;
 };
 
 async function saveToDatabase(lead: Lead) {
@@ -27,13 +28,15 @@ async function saveToDatabase(lead: Lead) {
         email TEXT,
         message TEXT,
         package TEXT,
+        promo TEXT,
         source TEXT NOT NULL DEFAULT 'website',
         created_at TIMESTAMPTZ NOT NULL DEFAULT now()
       )
     `;
+    await sql`ALTER TABLE leads ADD COLUMN IF NOT EXISTS promo TEXT`;
     await sql`
-      INSERT INTO leads (name, company, phone, email, message, package, source)
-      VALUES (${lead.name}, ${lead.company}, ${lead.phone}, ${lead.email || null}, ${lead.message || null}, ${lead.package || null}, 'website')
+      INSERT INTO leads (name, company, phone, email, message, package, promo, source)
+      VALUES (${lead.name}, ${lead.company}, ${lead.phone}, ${lead.email || null}, ${lead.message || null}, ${lead.package || null}, ${lead.promo || null}, 'website')
     `;
     return { attempted: true, ok: true };
   } catch (error) {
@@ -61,6 +64,7 @@ async function sendEmail(lead: Lead) {
         `Phone: ${lead.phone}`,
         lead.email ? `Email: ${lead.email}` : null,
         lead.package ? `Package: ${lead.package}` : null,
+        lead.promo ? `Promo: ${lead.promo}` : null,
         lead.message ? `Message: ${lead.message}` : null,
       ]
         .filter(Boolean)
@@ -80,7 +84,10 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Invalid request.' }, { status: 400 });
   }
 
-  const { name, company, phone, email, message, package: pkg, website } = body as Record<string, string>;
+  const { name, company, phone, email, message, package: pkg, promo, website } = body as Record<
+    string,
+    string
+  >;
 
   // Honeypot: real users never fill this hidden field, bots usually do.
   if (website) {
@@ -98,6 +105,7 @@ export async function POST(request: Request) {
     email: email?.trim() ?? '',
     message: message?.trim() ?? '',
     package: pkg?.trim() ?? '',
+    promo: promo?.trim() ?? '',
   };
 
   const [db, mail] = await Promise.all([saveToDatabase(lead), sendEmail(lead)]);

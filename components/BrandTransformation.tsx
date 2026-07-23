@@ -7,7 +7,15 @@ import { GoogleReviewsBadge } from './GoogleReviewsBadge';
 const before = ['Looks generic', 'No trust', 'Competes on price', 'Gets overlooked'];
 const after = ['Instant trust', 'Stands out', 'Charges more', 'Gets chosen'];
 
-export function BrandTransformation({ selectedPackage }: { selectedPackage?: string }) {
+export function BrandTransformation({
+  selectedPackage,
+  promo,
+  promoLabel,
+}: {
+  selectedPackage?: string;
+  promo?: string;
+  promoLabel?: string;
+}) {
   return (
     <section id="free-brand-review" className="bg-brand-navy-light py-20 text-white">
       <Container>
@@ -77,7 +85,7 @@ export function BrandTransformation({ selectedPackage }: { selectedPackage?: str
             <GoogleReviewsBadge />
           </div>
           <div className="mt-8">
-            <BrandReviewForm selectedPackage={selectedPackage} />
+            <BrandReviewForm selectedPackage={selectedPackage} promo={promo} promoLabel={promoLabel} />
           </div>
         </div>
       </Container>

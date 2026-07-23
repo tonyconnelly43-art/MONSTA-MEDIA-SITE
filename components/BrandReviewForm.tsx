@@ -6,7 +6,15 @@ import { siteConfig } from '@/lib/site-config';
 
 type Status = 'idle' | 'loading' | 'success' | 'error';
 
-export function BrandReviewForm({ selectedPackage }: { selectedPackage?: string }) {
+export function BrandReviewForm({
+  selectedPackage,
+  promo,
+  promoLabel,
+}: {
+  selectedPackage?: string;
+  promo?: string;
+  promoLabel?: string;
+}) {
   const [status, setStatus] = useState<Status>('idle');
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -67,8 +75,17 @@ export function BrandReviewForm({ selectedPackage }: { selectedPackage?: string 
       {selectedPackage && (
         <>
           <input type="hidden" name="package" value={selectedPackage} />
-          <p className="mb-4 inline-flex items-center gap-2 rounded-full bg-brand-red/10 px-4 py-1.5 text-sm font-semibold text-brand-red">
+          <p className="mb-2 inline-flex items-center gap-2 rounded-full bg-brand-red/10 px-4 py-1.5 text-sm font-semibold text-brand-red">
             Interested in: {selectedPackage}
+          </p>
+        </>
+      )}
+
+      {promo && (
+        <>
+          <input type="hidden" name="promo" value={promo} />
+          <p className="mb-4 inline-flex items-center gap-2 rounded-full bg-green-500/10 px-4 py-1.5 text-sm font-semibold text-green-600">
+            {promoLabel ?? `Promo applied: ${promo}`}
           </p>
         </>
       )}
