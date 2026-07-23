@@ -60,7 +60,19 @@ export default async function HomePage({
 
   return (
     <>
-      <section className="relative min-h-[560px] overflow-hidden bg-brand-navy text-white md:min-h-[680px]">
+      <section className="relative overflow-hidden bg-brand-navy text-white md:min-h-[680px]">
+        <div className="relative h-56 w-full sm:h-64 md:hidden">
+          <Image
+            src="/van-wrap-true-north.png"
+            alt="True North Heating & Cooling service van with a full custom wrap design by Monsta Media & Design, featuring a bold polar bear mascot and bright teal and navy branding"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[60%_center]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/10 to-transparent" />
+        </div>
+
         <div className="absolute inset-y-0 right-0 hidden w-[62%] md:block">
           <Image
             src="/van-wrap-true-north.png"
@@ -74,7 +86,7 @@ export default async function HomePage({
           <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/40 via-transparent to-transparent" />
         </div>
 
-        <Container className="relative py-20 md:py-32">
+        <Container className="relative py-8 md:py-32">
           <div className="max-w-xl">
             <span className="inline-flex items-center gap-2 rounded-full border border-brand-red/60 bg-brand-red/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-brand-red">
               <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
