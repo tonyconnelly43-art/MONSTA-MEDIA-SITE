@@ -32,10 +32,10 @@ export function ProcessSteps() {
 
         <div className="mt-16 grid gap-12 md:grid-cols-3">
           {steps.map((step) => (
-            <div key={step.number}>
+            <div key={step.number} className="text-center">
               <p className="font-display text-6xl text-white/20 md:text-7xl">{step.number}</p>
               <h3 className="mt-2 font-display text-2xl text-brand-red">{step.title}</h3>
-              <p className="mt-3 text-brand-cream/80">{step.body}</p>
+              <p className="mx-auto mt-3 max-w-xs text-brand-cream/80">{step.body}</p>
             </div>
           ))}
         </div>
