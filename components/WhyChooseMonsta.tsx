@@ -14,7 +14,7 @@ export function WhyChooseMonsta() {
         <div className="mx-auto mt-10 max-w-3xl rounded-chunky bg-brand-navy p-8 text-center text-brand-cream/90 md:p-12">
           <p>
             Most companies settle for looking &ldquo;good enough.&rdquo; We don&apos;t. Monsta Media &amp;
-            Design builds bold logos, van wraps, uniforms, and websites for HVAC, plumbing, electrical, and
+            Design builds bold brands, van wraps, uniforms, and websites for HVAC, plumbing, electrical, and
             other home service companies across Cleveland and Northfield, Ohio.
           </p>
           <p className="mt-5">
