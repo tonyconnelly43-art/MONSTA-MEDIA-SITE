@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { MapPin, Palette, Shirt, Truck, Zap, Globe } from 'lucide-react';
 import { BrandTransformation } from '@/components/BrandTransformation';
 import { Container } from '@/components/Container';
 import { CTAButton } from '@/components/CTAButton';
 import { GoogleReviewsBadge } from '@/components/GoogleReviewsBadge';
-import { HeroVanCarousel } from '@/components/HeroVanCarousel';
 import { MonsterMascot } from '@/components/MonsterMascot';
 import { ProcessSteps } from '@/components/ProcessSteps';
 import { WhyChooseMonsta } from '@/components/WhyChooseMonsta';
@@ -62,13 +62,28 @@ export default async function HomePage({
     <>
       <section className="relative overflow-hidden bg-brand-navy text-white md:min-h-[680px]">
         <div className="relative h-56 w-full sm:h-64 md:hidden">
-          <HeroVanCarousel sizes="100vw" priority className="p-4" />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-brand-navy via-transparent to-transparent" />
+          <Image
+            src="/van-wrap-true-north.png"
+            alt="True North Heating & Cooling service van with a full custom wrap design by Monsta Media & Design, featuring a bold polar bear mascot and bright teal and navy branding"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[60%_center]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/10 to-transparent" />
         </div>
 
         <div className="absolute inset-y-0 right-0 hidden w-[62%] md:block">
-          <HeroVanCarousel sizes="62vw" priority className="p-10" />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/20 via-15% to-transparent to-40%" />
+          <Image
+            src="/van-wrap-true-north.png"
+            alt="True North Heating & Cooling service van with a full custom wrap design by Monsta Media & Design, featuring a bold polar bear mascot and bright teal and navy branding"
+            fill
+            priority
+            sizes="62vw"
+            className="object-cover object-[35%_center]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/70 via-25% to-transparent to-55%" />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/40 via-transparent to-transparent" />
         </div>
 
         <Container className="relative py-8 md:py-32">
