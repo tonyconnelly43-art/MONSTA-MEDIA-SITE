@@ -6,6 +6,12 @@ import { siteConfig } from '@/lib/site-config';
 
 type Status = 'idle' | 'loading' | 'success' | 'error';
 
+declare global {
+  interface Window {
+    fbq?: (...args: unknown[]) => void;
+  }
+}
+
 export function BrandReviewForm({
   selectedPackage,
   promo,
@@ -39,6 +45,7 @@ export function BrandReviewForm({
       }
 
       setStatus('success');
+      window.fbq?.('track', 'Lead');
       form.reset();
     } catch (err) {
       setStatus('error');

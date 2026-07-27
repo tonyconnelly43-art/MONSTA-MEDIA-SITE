@@ -6,6 +6,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ChatWidget } from '@/components/ChatWidget';
 import { JsonLd } from '@/components/JsonLd';
+import { MetaPixel } from '@/components/MetaPixel';
 import { localBusinessJsonLd } from '@/lib/seo';
 import { siteConfig } from '@/lib/site-config';
 
@@ -25,6 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${display.variable} ${body.variable}`}>
       <body className="font-body">
+        <MetaPixel />
         <JsonLd data={localBusinessJsonLd()} />
         <Header />
         <main>{children}</main>
