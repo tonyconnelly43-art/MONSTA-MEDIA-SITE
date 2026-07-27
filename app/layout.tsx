@@ -7,6 +7,7 @@ import { Footer } from '@/components/Footer';
 import { ChatWidget } from '@/components/ChatWidget';
 import { JsonLd } from '@/components/JsonLd';
 import { MetaPixel } from '@/components/MetaPixel';
+import { PageViewTracker } from '@/components/PageViewTracker';
 import { localBusinessJsonLd } from '@/lib/seo';
 import { siteConfig } from '@/lib/site-config';
 
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${display.variable} ${body.variable}`}>
       <body className="font-body">
         <MetaPixel />
+        <PageViewTracker />
         <JsonLd data={localBusinessJsonLd()} />
         <Header />
         <main>{children}</main>
