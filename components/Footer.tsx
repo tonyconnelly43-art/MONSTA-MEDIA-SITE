@@ -75,10 +75,7 @@ export function Footer() {
         </nav>
       </Container>
       <div className="border-t border-white/10 py-4 text-center text-xs text-brand-cream/60">
-        &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.{' '}
-        <Link href="/admin" className="text-brand-cream/30 hover:text-brand-cream/60">
-          Admin
-        </Link>
+        &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
       </div>
     </footer>
   );
