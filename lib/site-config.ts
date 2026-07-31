@@ -20,6 +20,7 @@ export const siteConfig = {
     instagram: 'https://www.instagram.com/monstamediaanddesign/',
   },
   googleReviewUrl: 'https://maps.app.goo.gl/oQuTGtcgNUvHSx3P9',
+  calendlyUrl: 'https://calendly.com/monsta-media/free-brand-review',
   colors: {
     red: '#D62828',
     navy: '#0A1930',

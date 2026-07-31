@@ -1,6 +1,7 @@
+import { randomUUID } from 'crypto';
 import { NextResponse } from 'next/server';
-import { neon } from '@neondatabase/serverless';
 import { Resend } from 'resend';
+import { getSql } from '@/lib/db';
 import { siteConfig } from '@/lib/site-config';
 
 type Lead = {
@@ -14,11 +15,10 @@ type Lead = {
 };
 
 async function saveToDatabase(lead: Lead) {
-  const dbUrl = process.env.DATABASE_URL;
-  if (!dbUrl) return { attempted: false, ok: false };
+  const sql = getSql();
+  if (!sql) return { attempted: false, ok: false, stopToken: null as string | null };
 
   try {
-    const sql = neon(dbUrl);
     await sql`
       CREATE TABLE IF NOT EXISTS leads (
         id SERIAL PRIMARY KEY,
@@ -30,22 +30,39 @@ async function saveToDatabase(lead: Lead) {
         package TEXT,
         promo TEXT,
         source TEXT NOT NULL DEFAULT 'website',
+        stop_token TEXT,
+        follow_up_stage INT NOT NULL DEFAULT 0,
+        next_follow_up_at TIMESTAMPTZ,
+        stopped BOOLEAN NOT NULL DEFAULT false,
         created_at TIMESTAMPTZ NOT NULL DEFAULT now()
       )
     `;
     await sql`ALTER TABLE leads ADD COLUMN IF NOT EXISTS promo TEXT`;
+    await sql`ALTER TABLE leads ADD COLUMN IF NOT EXISTS stop_token TEXT`;
+    await sql`ALTER TABLE leads ADD COLUMN IF NOT EXISTS follow_up_stage INT NOT NULL DEFAULT 0`;
+    await sql`ALTER TABLE leads ADD COLUMN IF NOT EXISTS next_follow_up_at TIMESTAMPTZ`;
+    await sql`ALTER TABLE leads ADD COLUMN IF NOT EXISTS stopped BOOLEAN NOT NULL DEFAULT false`;
+
+    const stopToken = randomUUID();
+    const hasEmail = Boolean(lead.email);
+    const nextFollowUpAt = hasEmail ? new Date(Date.now() + 2 * 24 * 60 * 60 * 1000) : null;
+
     await sql`
-      INSERT INTO leads (name, company, phone, email, message, package, promo, source)
-      VALUES (${lead.name}, ${lead.company}, ${lead.phone}, ${lead.email || null}, ${lead.message || null}, ${lead.package || null}, ${lead.promo || null}, 'website')
+      INSERT INTO leads (name, company, phone, email, message, package, promo, source, stop_token, next_follow_up_at, stopped)
+      VALUES (
+        ${lead.name}, ${lead.company}, ${lead.phone}, ${lead.email || null}, ${lead.message || null},
+        ${lead.package || null}, ${lead.promo || null}, 'website', ${stopToken},
+        ${nextFollowUpAt}, ${!hasEmail}
+      )
     `;
-    return { attempted: true, ok: true };
+    return { attempted: true, ok: true, stopToken };
   } catch (error) {
     console.error('Failed to save lead to database:', error);
-    return { attempted: true, ok: false };
+    return { attempted: true, ok: false, stopToken: null as string | null };
   }
 }
 
-async function sendEmail(lead: Lead) {
+async function sendInternalNotification(lead: Lead) {
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) return { attempted: false, ok: false };
 
@@ -74,6 +91,36 @@ async function sendEmail(lead: Lead) {
   } catch (error) {
     console.error('Failed to send lead email:', error);
     return { attempted: true, ok: false };
+  }
+}
+
+async function sendLeadConfirmation(lead: Lead, stopToken: string | null) {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey || !lead.email || !stopToken) return;
+
+  const stopUrl = `${siteConfig.url}/api/stop-followups?token=${stopToken}`;
+
+  try {
+    const resend = new Resend(apiKey);
+    await resend.emails.send({
+      from: `${siteConfig.name} <onboarding@resend.dev>`,
+      to: lead.email,
+      subject: `Thanks, ${lead.name} — let's book your free brand review`,
+      text: [
+        `Hey ${lead.name},`,
+        '',
+        `Thanks for reaching out to ${siteConfig.name}! The fastest next step is to grab a time on our calendar for your free 10 minute brand review:`,
+        '',
+        siteConfig.calendlyUrl,
+        '',
+        `Talk soon,`,
+        siteConfig.name,
+        '',
+        `Already booked or not interested? Click here and we won't send any more reminders: ${stopUrl}`,
+      ].join('\n'),
+    });
+  } catch (error) {
+    console.error('Failed to send lead confirmation email:', error);
   }
 }
 
@@ -108,7 +155,8 @@ export async function POST(request: Request) {
     promo: promo?.trim() ?? '',
   };
 
-  const [db, mail] = await Promise.all([saveToDatabase(lead), sendEmail(lead)]);
+  const [db, mail] = await Promise.all([saveToDatabase(lead), sendInternalNotification(lead)]);
+  await sendLeadConfirmation(lead, db.stopToken);
 
   if (!db.attempted && !mail.attempted) {
     console.error('Neither DATABASE_URL nor RESEND_API_KEY is set; lead was not captured anywhere.');
