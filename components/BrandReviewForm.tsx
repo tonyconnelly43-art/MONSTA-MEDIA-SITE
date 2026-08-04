@@ -9,6 +9,7 @@ type Status = 'idle' | 'loading' | 'success' | 'error';
 declare global {
   interface Window {
     fbq?: (...args: unknown[]) => void;
+    gtag?: (...args: unknown[]) => void;
   }
 }
 
@@ -46,6 +47,7 @@ export function BrandReviewForm({
 
       setStatus('success');
       window.fbq?.('track', 'Lead');
+      window.gtag?.('event', 'generate_lead');
       form.reset();
     } catch (err) {
       setStatus('error');
