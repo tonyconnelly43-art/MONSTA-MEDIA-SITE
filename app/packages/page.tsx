@@ -58,7 +58,7 @@ export default function PackagesPage() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-8">
+              <div className="mt-8 flex justify-center">
                 <CTAButton href={`/?package=${encodeURIComponent(pkg.name)}#free-brand-review`}>
                   Get Started
                 </CTAButton>

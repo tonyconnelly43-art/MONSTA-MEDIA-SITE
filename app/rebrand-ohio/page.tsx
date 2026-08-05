@@ -69,7 +69,7 @@ export default function RebrandOhioPage() {
                     </li>
                   ))}
                 </ul>
-                <div className="mt-8">
+                <div className="mt-8 flex justify-center">
                   <CTAButton
                     href={`/?package=${encodeURIComponent(pkg.name)}&promo=${PROMO_CODE}#free-brand-review`}
                   >
