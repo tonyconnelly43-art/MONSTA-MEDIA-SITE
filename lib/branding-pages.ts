@@ -160,6 +160,66 @@ export const brandingPages: BrandingPage[] = [
       },
     ],
   },
+  {
+    slug: 'branding-for-plumbing-companies',
+    keyword: 'branding for plumbing companies',
+    h1: 'Branding for Plumbing Companies in Cleveland & Northfield, OH',
+    metaTitle: 'Branding for Plumbing Companies | Cleveland & Northfield, OH',
+    metaDescription:
+      'Monsta Media & Design builds brands, van wraps, and uniform systems for plumbing companies in Cleveland, Northfield, and Northeast Ohio. Look as reliable as the work you do.',
+    intro:
+      'A plumbing call is almost always urgent, and the homeowner is judging trustworthiness in seconds. We build brand identities, van wraps, and uniform systems for plumbing companies in Cleveland and Northfield, Ohio that read as established and reliable the moment your truck pulls up.',
+    sections: [
+      {
+        heading: 'Plumbing Is a Trust Business First',
+        body: 'Homeowners are letting a stranger into their house to deal with a real problem. A brand that looks consistent and professional — not a mismatched van and a generic business card — closes that trust gap before a word is spoken.',
+      },
+      {
+        heading: 'What We Build for Plumbing Brands',
+        body: 'A full brand identity, van and fleet wrap design, technician uniforms, yard signs and door hangers, and a website built to rank for "plumber near me" and emergency plumbing searches across Northeast Ohio.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Do you work with plumbing companies outside Cleveland and Northfield?',
+        answer: 'Yes — we serve plumbing contractors throughout Northeast Ohio, including Cleveland, Northfield, and Akron.',
+      },
+      {
+        question: 'Can you design around an existing plumbing brand instead of starting over?',
+        answer: 'Yes — we can refresh your current colors and identity, or build a full brand system from scratch if you\'re rebranding.',
+      },
+    ],
+  },
+  {
+    slug: 'branding-for-electrical-companies',
+    keyword: 'branding for electrical companies',
+    h1: 'Branding for Electrical Companies in Cleveland & Northfield, OH',
+    metaTitle: 'Branding for Electrical Companies | Cleveland & Northfield, OH',
+    metaDescription:
+      'Custom branding, van wraps, and uniform design for electrical contractors in Cleveland, Northfield, and Northeast Ohio. Built by Monsta Media & Design.',
+    intro:
+      'Electrical work is technical and safety-sensitive — your brand needs to signal that you know what you\'re doing before a customer ever asks a question. We build brand identities, van wraps, and uniforms for electrical contractors in Cleveland and Northfield, Ohio built to earn that confidence fast.',
+    sections: [
+      {
+        heading: 'Standing Out in a Safety-Driven Trade',
+        body: 'Customers hiring an electrician are thinking about safety and licensing as much as price. A sharp, consistent brand across your van, uniforms, and website signals the same professionalism you bring to the actual electrical work.',
+      },
+      {
+        heading: 'What We Build for Electrical Brands',
+        body: 'Brand identity and color system, van and fleet wrap design, technician uniform artwork, yard signs, and a website built to rank for electrical service searches across Cleveland and Northeast Ohio.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Do you work with electrical contractors outside Cleveland and Northfield?',
+        answer: 'Yes — we serve electrical contractors throughout Northeast Ohio, including Cleveland, Northfield, and Akron.',
+      },
+      {
+        question: 'How long does an electrical branding project take?',
+        answer: 'A full brand identity typically takes 2-3 weeks. Adding van wrap and uniform design extends the timeline based on your fleet size.',
+      },
+    ],
+  },
 ];
 
 export function getBrandingPage(slug: string) {
