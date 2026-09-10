@@ -21,6 +21,9 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  verification: {
+    google: '4bDatAoxI_5tKGO8wdsPUCFagJnb9OwigfQ2LjPI3GM',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
