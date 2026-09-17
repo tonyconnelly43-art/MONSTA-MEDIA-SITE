@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import type { FormEvent } from 'react';
 import { siteConfig } from '@/lib/site-config';
+import { getStoredAttribution } from '@/lib/attribution';
 
 type Status = 'idle' | 'loading' | 'success' | 'error';
 
@@ -37,7 +38,7 @@ export function BrandReviewForm({
       const res = await fetch('/api/quote', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, ...getStoredAttribution() }),
       });
 
       if (!res.ok) {

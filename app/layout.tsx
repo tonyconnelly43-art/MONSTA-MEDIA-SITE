@@ -8,6 +8,7 @@ import { ChatWidget } from '@/components/ChatWidget';
 import { GoogleAnalytics } from '@/components/GoogleAnalytics';
 import { JsonLd } from '@/components/JsonLd';
 import { MetaPixel } from '@/components/MetaPixel';
+import { AttributionCapture } from '@/components/AttributionCapture';
 import { localBusinessJsonLd } from '@/lib/seo';
 import { siteConfig } from '@/lib/site-config';
 
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="font-body">
         <MetaPixel />
         <GoogleAnalytics />
+        <AttributionCapture />
         <JsonLd data={localBusinessJsonLd()} />
         <Header />
         <main>{children}</main>

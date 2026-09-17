@@ -12,6 +12,9 @@ type Lead = {
   message: string;
   package: string;
   promo: string;
+  utm_source: string;
+  utm_medium: string;
+  utm_campaign: string;
 };
 
 async function saveToDatabase(lead: Lead) {
@@ -42,17 +45,24 @@ async function saveToDatabase(lead: Lead) {
     await sql`ALTER TABLE leads ADD COLUMN IF NOT EXISTS follow_up_stage INT NOT NULL DEFAULT 0`;
     await sql`ALTER TABLE leads ADD COLUMN IF NOT EXISTS next_follow_up_at TIMESTAMPTZ`;
     await sql`ALTER TABLE leads ADD COLUMN IF NOT EXISTS stopped BOOLEAN NOT NULL DEFAULT false`;
+    await sql`ALTER TABLE leads ADD COLUMN IF NOT EXISTS utm_source TEXT`;
+    await sql`ALTER TABLE leads ADD COLUMN IF NOT EXISTS utm_medium TEXT`;
+    await sql`ALTER TABLE leads ADD COLUMN IF NOT EXISTS utm_campaign TEXT`;
 
     const stopToken = randomUUID();
     const hasEmail = Boolean(lead.email);
     const nextFollowUpAt = hasEmail ? new Date(Date.now() + 2 * 24 * 60 * 60 * 1000) : null;
 
     await sql`
-      INSERT INTO leads (name, company, phone, email, message, package, promo, source, stop_token, next_follow_up_at, stopped)
+      INSERT INTO leads (
+        name, company, phone, email, message, package, promo, source, stop_token, next_follow_up_at, stopped,
+        utm_source, utm_medium, utm_campaign
+      )
       VALUES (
         ${lead.name}, ${lead.company}, ${lead.phone}, ${lead.email || null}, ${lead.message || null},
         ${lead.package || null}, ${lead.promo || null}, 'website', ${stopToken},
-        ${nextFollowUpAt}, ${!hasEmail}
+        ${nextFollowUpAt}, ${!hasEmail},
+        ${lead.utm_source || null}, ${lead.utm_medium || null}, ${lead.utm_campaign || null}
       )
     `;
     return { attempted: true, ok: true, stopToken };
@@ -131,10 +141,8 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Invalid request.' }, { status: 400 });
   }
 
-  const { name, company, phone, email, message, package: pkg, promo, website } = body as Record<
-    string,
-    string
-  >;
+  const { name, company, phone, email, message, package: pkg, promo, website, utm_source, utm_medium, utm_campaign } =
+    body as Record<string, string>;
 
   // Honeypot: real users never fill this hidden field, bots usually do.
   if (website) {
@@ -153,6 +161,9 @@ export async function POST(request: Request) {
     message: message?.trim() ?? '',
     package: pkg?.trim() ?? '',
     promo: promo?.trim() ?? '',
+    utm_source: utm_source?.trim() ?? '',
+    utm_medium: utm_medium?.trim() ?? '',
+    utm_campaign: utm_campaign?.trim() ?? '',
   };
 
   const [db, mail] = await Promise.all([saveToDatabase(lead), sendInternalNotification(lead)]);
