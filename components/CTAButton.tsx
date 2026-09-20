@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import type { ReactNode } from 'react';
+import { parseQuoteHref, useQuoteModal } from './QuoteModalContext';
 
 export function CTAButton({
   href,
@@ -10,6 +13,7 @@ export function CTAButton({
   children: ReactNode;
   variant?: 'primary' | 'secondary' | 'inverse';
 }) {
+  const { openQuoteModal } = useQuoteModal();
   const base =
     'inline-flex items-center justify-center rounded-chunky px-7 py-3.5 font-display uppercase tracking-wide transition-all duration-150 hover:-translate-y-0.5';
   const styles = {
@@ -19,6 +23,19 @@ export function CTAButton({
     inverse:
       'border-2 border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white',
   } as const;
+
+  const quoteOptions = parseQuoteHref(href);
+  if (quoteOptions) {
+    return (
+      <button
+        type="button"
+        onClick={() => openQuoteModal(quoteOptions)}
+        className={`${base} ${styles[variant]}`}
+      >
+        {children}
+      </button>
+    );
+  }
 
   return (
     <Link href={href} className={`${base} ${styles[variant]}`}>

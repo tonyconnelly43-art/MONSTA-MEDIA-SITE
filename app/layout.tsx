@@ -9,6 +9,8 @@ import { GoogleAnalytics } from '@/components/GoogleAnalytics';
 import { JsonLd } from '@/components/JsonLd';
 import { MetaPixel } from '@/components/MetaPixel';
 import { AttributionCapture } from '@/components/AttributionCapture';
+import { QuoteModalProvider } from '@/components/QuoteModalContext';
+import { QuoteModal } from '@/components/QuoteModal';
 import { localBusinessJsonLd } from '@/lib/seo';
 import { siteConfig } from '@/lib/site-config';
 
@@ -35,9 +37,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <GoogleAnalytics />
         <AttributionCapture />
         <JsonLd data={localBusinessJsonLd()} />
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <QuoteModalProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <QuoteModal />
+        </QuoteModalProvider>
         <ChatWidget />
         <Analytics />
       </body>

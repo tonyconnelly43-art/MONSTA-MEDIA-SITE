@@ -4,9 +4,11 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { primaryNav } from '@/lib/site-config';
+import { useQuoteModal } from './QuoteModalContext';
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
+  const { openQuoteModal } = useQuoteModal();
 
   return (
     <div className="md:hidden">
@@ -37,13 +39,16 @@ export function MobileNav() {
               {item.label}
             </Link>
           ))}
-          <Link
-            href="/#free-brand-review"
-            onClick={() => setOpen(false)}
+          <button
+            type="button"
+            onClick={() => {
+              setOpen(false);
+              openQuoteModal();
+            }}
             className="mt-2 rounded-chunky bg-brand-red px-4 py-3 text-center font-display uppercase tracking-wide text-white"
           >
             Get a Quote
-          </Link>
+          </button>
         </nav>
       )}
     </div>
