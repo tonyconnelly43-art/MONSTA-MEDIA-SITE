@@ -17,7 +17,7 @@ export function BrandTransformation({
   promoLabel?: string;
 }) {
   return (
-    <section id="free-brand-review" className="bg-brand-navy-light py-20 text-white">
+    <section className="bg-brand-navy-light py-20 text-white">
       <Container>
         <div className="text-center">
           <h2 className="font-display text-3xl text-white md:text-4xl">Show Up Like The Obvious Choice</h2>
@@ -75,7 +75,7 @@ export function BrandTransformation({
           </div>
         </div>
 
-        <div className="mt-20 text-center">
+        <div id="free-brand-review" className="mt-20 scroll-mt-6 text-center">
           <h3 className="font-display text-3xl text-white md:text-4xl">Free 10 Minute Brand Review</h3>
           <p className="mx-auto mt-4 max-w-md text-brand-cream/80">
             Get a custom review of your current brand and see exactly what&apos;s holding you back from
