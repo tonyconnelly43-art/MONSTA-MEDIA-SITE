@@ -8,6 +8,7 @@ import { CTAButton } from '@/components/CTAButton';
 import { GoogleReviewsBadge } from '@/components/GoogleReviewsBadge';
 import { MonsterMascot } from '@/components/MonsterMascot';
 import { ProcessSteps } from '@/components/ProcessSteps';
+import { RecentWork } from '@/components/RecentWork';
 import { WhyChooseMonsta } from '@/components/WhyChooseMonsta';
 import { WorkGallery } from '@/components/WorkGallery';
 import { buildMetadata } from '@/lib/seo';
@@ -132,6 +133,8 @@ export default async function HomePage({
           </Container>
         </div>
       </section>
+
+      <RecentWork />
 
       <section className="py-20">
         <Container>
