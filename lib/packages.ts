@@ -18,7 +18,16 @@ export const packages: Package[] = [
     name: 'Fleet & Brand',
     priceFrom: 4250,
     description: 'Everything in Starter Brand, plus van wrap design and uniform artwork built to match.',
-    features: ['Everything in Starter Brand', 'Van/fleet wrap design', 'Uniform & apparel design', 'Brand style guide'],
+    features: [
+      'Everything in Starter Brand',
+      'Van/fleet wrap design',
+      'Uniform & apparel design',
+      'Brand style guide',
+      'Trifold brochure design',
+      'Yard sign design',
+      'Equipment sticker design',
+      'Social media banner design',
+    ],
     featured: true,
   },
   {
