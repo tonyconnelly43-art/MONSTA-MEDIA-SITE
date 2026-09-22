@@ -27,7 +27,7 @@ export function RecentWork() {
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-brand-red">Recent Work</p>
             <h2 className="mt-2 font-display text-3xl text-brand-navy md:text-4xl">
-              Good Hope Air Conditioning &amp; Heating
+              Good Hope Air Conditioning &amp; Heating Website
             </h2>
             <p className="mt-4 text-brand-navy/70">
               A full custom website built for a Hemet, CA HVAC company &mdash; complete with service area
