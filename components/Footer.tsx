@@ -77,6 +77,18 @@ export function Footer() {
       <div className="border-t border-white/10 py-4 text-center text-xs text-brand-cream/60">
         &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
       </div>
+      <div className="border-t border-white/10 py-4 text-center text-xs text-brand-cream/60">
+        <div className="inline-flex items-center justify-center gap-2">
+          <span>Created by</span>
+          <Image
+            src="/logo-monsta-dark-bg.png"
+            alt="Monsta Media & Design"
+            width={800}
+            height={242}
+            className="h-5 w-auto"
+          />
+        </div>
+      </div>
     </footer>
   );
 }
