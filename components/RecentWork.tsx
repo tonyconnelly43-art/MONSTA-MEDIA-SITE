@@ -7,20 +7,38 @@ export function RecentWork() {
     <section className="bg-brand-cream py-16">
       <Container>
         <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_1fr]">
-          <div className="overflow-hidden rounded-chunky border-2 border-brand-navy/10 bg-white shadow-lg">
-            <div className="flex items-center gap-1.5 border-b border-brand-navy/10 bg-brand-navy/5 px-4 py-2.5">
-              <span className="h-2.5 w-2.5 rounded-full bg-brand-red/60" aria-hidden="true" />
-              <span className="h-2.5 w-2.5 rounded-full bg-brand-navy/20" aria-hidden="true" />
-              <span className="h-2.5 w-2.5 rounded-full bg-brand-navy/20" aria-hidden="true" />
+          <div className="relative pb-10 pl-8 sm:pb-14 sm:pl-12">
+            <div className="overflow-hidden rounded-chunky border-2 border-brand-navy/10 bg-white shadow-lg">
+              <div className="flex items-center gap-1.5 border-b border-brand-navy/10 bg-brand-navy/5 px-4 py-2.5">
+                <span className="h-2.5 w-2.5 rounded-full bg-brand-red/60" aria-hidden="true" />
+                <span className="h-2.5 w-2.5 rounded-full bg-brand-navy/20" aria-hidden="true" />
+                <span className="h-2.5 w-2.5 rounded-full bg-brand-navy/20" aria-hidden="true" />
+              </div>
+              <div className="relative aspect-[1440/900]">
+                <Image
+                  src="/work-good-hope-hvac.png"
+                  alt="Good Hope Air Conditioning & Heating website homepage, designed and built by Monsta Media & Design"
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover object-top"
+                />
+              </div>
             </div>
-            <div className="relative aspect-[1440/900]">
-              <Image
-                src="/work-good-hope-hvac.png"
-                alt="Good Hope Air Conditioning & Heating website homepage, designed and built by Monsta Media & Design"
-                fill
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                className="object-cover object-top"
-              />
+
+            <div className="absolute bottom-0 left-0 w-28 overflow-hidden rounded-[1.5rem] border-[5px] border-brand-navy bg-brand-navy shadow-2xl sm:w-36">
+              <div className="relative aspect-[390/844]">
+                <Image
+                  src="/work-good-hope-hvac-mobile.png"
+                  alt="Good Hope Air Conditioning & Heating website on mobile"
+                  fill
+                  sizes="144px"
+                  className="object-cover object-top"
+                />
+                <span
+                  className="absolute left-1/2 top-1.5 h-1 w-8 -translate-x-1/2 rounded-full bg-white/30"
+                  aria-hidden="true"
+                />
+              </div>
             </div>
           </div>
 
