@@ -8,10 +8,12 @@ export function CTAButton({
   href,
   children,
   variant = 'primary',
+  external = false,
 }: {
   href: string;
   children: ReactNode;
   variant?: 'primary' | 'secondary' | 'inverse';
+  external?: boolean;
 }) {
   const { openQuoteModal } = useQuoteModal();
   const base =
@@ -34,6 +36,14 @@ export function CTAButton({
       >
         {children}
       </button>
+    );
+  }
+
+  if (external) {
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" className={`${base} ${styles[variant]}`}>
+        {children}
+      </a>
     );
   }
 

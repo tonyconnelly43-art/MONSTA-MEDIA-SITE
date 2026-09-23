@@ -35,7 +35,7 @@ export function RecentWork() {
               jobs.
             </p>
             <div className="mt-6">
-              <CTAButton href="#" variant="inverse">
+              <CTAButton href="https://www.goodhopecomfort.com" variant="inverse" external>
                 Visit Site
               </CTAButton>
             </div>
