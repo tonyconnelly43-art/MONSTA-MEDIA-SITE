@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Container } from '@/components/Container';
-import { WorkGallery } from '@/components/WorkGallery';
+import { WorkTabs } from '@/components/WorkTabs';
 import { workItems } from '@/lib/work';
 import { buildMetadata } from '@/lib/seo';
 
@@ -18,14 +18,15 @@ export default function WorkPage() {
         <Container className="py-16 text-center md:py-20">
           <h1 className="font-display text-4xl text-white md:text-5xl">Our Work</h1>
           <p className="mx-auto mt-4 max-w-2xl text-brand-cream/90">
-            A look at brand identities and van wrap designs we&apos;ve built for home service and trades
-            businesses. Every brand gets its own logo, color system, and van wrap designed to work together.
+            A look at the websites, van wraps, uniforms, and print pieces we&apos;ve built for home service
+            and trades businesses. Every brand gets its own logo, color system, and identity designed to
+            work together across every touchpoint.
           </p>
         </Container>
       </section>
 
       <Container className="py-16">
-        <WorkGallery items={workItems} />
+        <WorkTabs items={workItems} />
       </Container>
     </>
   );
