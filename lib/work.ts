@@ -13,7 +13,7 @@ export type WorkItem = {
 
 // Preferred left-to-right order for the category nav on /work. A category
 // only shows up once at least one item of that type exists below.
-export const workTypeOrder: WorkType[] = ['Website', 'Van Wrap', 'Uniform', 'Print'];
+export const workTypeOrder: WorkType[] = ['Van Wrap', 'Uniform', 'Print', 'Website'];
 
 export const workTypeSlugs: Record<WorkType, string> = {
   Website: 'websites',
@@ -257,6 +257,14 @@ export const workItems: WorkItem[] = [
     type: 'Uniform',
     image: '/uniforms/level-up-lawn.png',
     backImage: '/uniforms/level-up-lawn-back.png',
+  },
+  {
+    slug: 'apex-climate-print',
+    name: 'Apex Climate Solutions',
+    tagline: 'Reaching the Peak of Comfort',
+    category: 'HVAC',
+    type: 'Print',
+    image: '/print/apex-climate.png',
   },
 ];
 
