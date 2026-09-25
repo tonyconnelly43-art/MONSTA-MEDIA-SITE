@@ -188,6 +188,14 @@ export const workItems: WorkItem[] = [
     image: '/work-good-hope-hvac.png',
   },
   {
+    slug: 'comfort-chemist-website',
+    name: 'Comfort Chemist',
+    tagline: 'Trusted Heating And Cooling Experts',
+    category: 'HVAC',
+    type: 'Website',
+    image: '/work-comfort-chemist.png',
+  },
+  {
     slug: 'grizzly-comfort-uniform',
     name: 'Grizzly Comfort',
     tagline: 'Heat & Air',
