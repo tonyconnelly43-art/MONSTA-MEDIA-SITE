@@ -7,6 +7,8 @@ export type WorkItem = {
   category: string;
   type: WorkType;
   image: string;
+  // Optional back-of-garment shot. When set, the card flips on click.
+  backImage?: string;
 };
 
 // Preferred left-to-right order for the category nav on /work. A category
@@ -192,6 +194,7 @@ export const workItems: WorkItem[] = [
     category: 'HVAC',
     type: 'Uniform',
     image: '/uniforms/grizzly-comfort.png',
+    backImage: '/uniforms/grizzly-comfort-back.png',
   },
   {
     slug: 'apex-climate-uniform',
@@ -200,6 +203,7 @@ export const workItems: WorkItem[] = [
     category: 'HVAC',
     type: 'Uniform',
     image: '/uniforms/apex-climate.png',
+    backImage: '/uniforms/apex-climate-back.png',
   },
   {
     slug: 'mammoth-air-uniform',
@@ -208,6 +212,7 @@ export const workItems: WorkItem[] = [
     category: 'HVAC',
     type: 'Uniform',
     image: '/uniforms/mammoth-air.png',
+    backImage: '/uniforms/mammoth-air-back.png',
   },
   {
     slug: 'yard-heros-uniform',
@@ -216,6 +221,7 @@ export const workItems: WorkItem[] = [
     category: 'Landscaping',
     type: 'Uniform',
     image: '/uniforms/yard-heros.png',
+    backImage: '/uniforms/yard-heros-back.png',
   },
   {
     slug: 'svac-services-uniform',
@@ -224,6 +230,7 @@ export const workItems: WorkItem[] = [
     category: 'HVAC',
     type: 'Uniform',
     image: '/uniforms/svac-services.png',
+    backImage: '/uniforms/svac-services-back.png',
   },
   {
     slug: 'amp-theory-uniform',
@@ -232,6 +239,7 @@ export const workItems: WorkItem[] = [
     category: 'Electrical',
     type: 'Uniform',
     image: '/uniforms/amp-theory.png',
+    backImage: '/uniforms/amp-theory-back.png',
   },
   {
     slug: 'level-up-lawn-uniform',
@@ -240,6 +248,7 @@ export const workItems: WorkItem[] = [
     category: 'Landscaping',
     type: 'Uniform',
     image: '/uniforms/level-up-lawn.png',
+    backImage: '/uniforms/level-up-lawn-back.png',
   },
 ];
 
