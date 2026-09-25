@@ -9,9 +9,52 @@ export type WorkItem = {
   image: string;
 };
 
-// Preferred left-to-right order for the type tabs on /work. A type only
-// shows up as a tab once at least one item of that type exists below.
+// Preferred left-to-right order for the category nav on /work. A category
+// only shows up once at least one item of that type exists below.
 export const workTypeOrder: WorkType[] = ['Website', 'Van Wrap', 'Uniform', 'Print'];
+
+export const workTypeSlugs: Record<WorkType, string> = {
+  Website: 'websites',
+  'Van Wrap': 'van-wraps',
+  Uniform: 'uniforms',
+  Print: 'print',
+};
+
+export const workTypeContent: Record<WorkType, { navLabel: string; title: string; blurb: string; metaTitle: string; metaDescription: string }> = {
+  Website: {
+    navLabel: 'Websites',
+    title: 'Website Design',
+    blurb:
+      'Fast, mobile-first websites built to rank for the home service searches your customers are already typing into Google.',
+    metaTitle: 'Website Design Portfolio',
+    metaDescription:
+      'Websites Monsta Media & Design has built for HVAC, plumbing, and other home service and trades businesses.',
+  },
+  'Van Wrap': {
+    navLabel: 'Van Wraps',
+    title: 'Van Wrap Design',
+    blurb:
+      'Full and partial van wrap designs built for HVAC, plumbing, electrical, and contractor fleets that need to turn heads on every job.',
+    metaTitle: 'Van Wrap Design Portfolio',
+    metaDescription:
+      'Van wrap designs Monsta Media & Design has built for HVAC, plumbing, electrical, and other trades businesses.',
+  },
+  Uniform: {
+    navLabel: 'Uniforms',
+    title: 'Uniform Design',
+    blurb: 'Uniform designs that keep a crew looking like one brand from the truck to the front door.',
+    metaTitle: 'Uniform Design Portfolio',
+    metaDescription: 'Uniform designs Monsta Media & Design has built for home service and trades businesses.',
+  },
+  Print: {
+    navLabel: 'Print & Signage',
+    title: 'Print & Signage',
+    blurb: 'Business cards, yard signs, door hangers, and brochures designed to match everything else in the brand.',
+    metaTitle: 'Print & Signage Portfolio',
+    metaDescription:
+      'Print and signage pieces Monsta Media & Design has designed for home service and trades businesses.',
+  },
+};
 
 export const workItems: WorkItem[] = [
   {
@@ -143,3 +186,11 @@ export const workItems: WorkItem[] = [
     image: '/work-good-hope-hvac.png',
   },
 ];
+
+export function getAvailableWorkTypes(): WorkType[] {
+  return workTypeOrder.filter((type) => workItems.some((item) => item.type === type));
+}
+
+export function getWorkTypeBySlug(slug: string): WorkType | undefined {
+  return getAvailableWorkTypes().find((type) => workTypeSlugs[type] === slug);
+}
