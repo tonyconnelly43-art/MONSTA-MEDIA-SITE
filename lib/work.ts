@@ -266,6 +266,38 @@ export const workItems: WorkItem[] = [
     type: 'Print',
     image: '/print/apex-climate.png',
   },
+  {
+    slug: 'grizzly-comfort-print',
+    name: 'Grizzly Comfort',
+    tagline: 'Heat & Air',
+    category: 'HVAC',
+    type: 'Print',
+    image: '/print/grizzly-comfort.png',
+  },
+  {
+    slug: 'air-command-print',
+    name: 'Air Command HVAC',
+    tagline: 'Heating, Cooling & Air Quality',
+    category: 'HVAC',
+    type: 'Print',
+    image: '/print/air-command.png',
+  },
+  {
+    slug: 'amp-theory-print',
+    name: 'Amp Theory Electric',
+    tagline: 'The Future of Electrical Starts Here',
+    category: 'Electrical',
+    type: 'Print',
+    image: '/print/amp-theory.png',
+  },
+  {
+    slug: 'captain-gutter-print',
+    name: 'Captain Gutter',
+    tagline: 'Protecting Homes. Controlling the Flow.',
+    category: 'Gutters',
+    type: 'Print',
+    image: '/print/captain-gutter.png',
+  },
 ];
 
 export function getAvailableWorkTypes(): WorkType[] {
