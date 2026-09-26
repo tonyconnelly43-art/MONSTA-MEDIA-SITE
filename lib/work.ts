@@ -298,6 +298,14 @@ export const workItems: WorkItem[] = [
     type: 'Print',
     image: '/print/captain-gutter.png',
   },
+  {
+    slug: 'true-north-print',
+    name: 'True North Heating & Cooling',
+    tagline: 'Follow the Path to Better Comfort',
+    category: 'HVAC',
+    type: 'Print',
+    image: '/print/true-north.png',
+  },
 ];
 
 export function getAvailableWorkTypes(): WorkType[] {
