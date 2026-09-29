@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Check } from 'lucide-react';
 import { Container } from '@/components/Container';
+import { CostOfInaction } from '@/components/CostOfInaction';
 import { CTAButton } from '@/components/CTAButton';
 import { GoogleReviewsBadge } from '@/components/GoogleReviewsBadge';
 import { buildMetadata } from '@/lib/seo';
@@ -30,6 +31,8 @@ export default function PackagesPage() {
           </div>
         </Container>
       </section>
+
+      <CostOfInaction />
 
       <Container className="py-16">
         <div className="grid gap-8 md:grid-cols-3">
