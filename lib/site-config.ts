@@ -34,6 +34,7 @@ export const primaryNav = [
   { label: 'Packages', href: '/packages' },
   { label: 'Branding for Trades', href: '/branding' },
   { label: 'Blog', href: '/blog' },
+  { label: 'About', href: '/about' },
 ] as const;
 
 export const footerNav = [

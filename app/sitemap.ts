@@ -7,6 +7,7 @@ import { getAvailableWorkTypes, workTypeSlugs } from '@/lib/work';
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     '',
+    '/about',
     '/services',
     '/packages',
     '/blog',
