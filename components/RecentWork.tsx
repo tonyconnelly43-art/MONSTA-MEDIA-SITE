@@ -1,8 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import Image from 'next/image';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Volume2, VolumeX } from 'lucide-react';
 import { CTAButton } from './CTAButton';
 import { Container } from './Container';
 import { recentWorkItems } from '@/lib/recent-work';
@@ -22,10 +22,20 @@ function BrowserFrame({ children }: { children: React.ReactNode }) {
 
 export function RecentWork() {
   const [index, setIndex] = useState(0);
+  const [muted, setMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const item = recentWorkItems[index];
 
   function goTo(next: number) {
     setIndex((next + recentWorkItems.length) % recentWorkItems.length);
+    setMuted(true);
+  }
+
+  function toggleMuted() {
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = !video.muted;
+    setMuted(video.muted);
   }
 
   return (
@@ -68,6 +78,7 @@ export function RecentWork() {
                 <div className="relative aspect-video bg-brand-navy">
                   <video
                     key={item.videoSrc}
+                    ref={videoRef}
                     src={item.videoSrc}
                     autoPlay
                     muted
@@ -75,6 +86,18 @@ export function RecentWork() {
                     playsInline
                     className="h-full w-full object-cover"
                   />
+                  <button
+                    type="button"
+                    onClick={toggleMuted}
+                    aria-label={muted ? 'Unmute video' : 'Mute video'}
+                    className="absolute bottom-3 right-3 flex h-9 w-9 items-center justify-center rounded-full bg-brand-navy/80 text-white transition-colors hover:bg-brand-red"
+                  >
+                    {muted ? (
+                      <VolumeX className="h-4 w-4" aria-hidden="true" />
+                    ) : (
+                      <Volume2 className="h-4 w-4" aria-hidden="true" />
+                    )}
+                  </button>
                 </div>
               </BrowserFrame>
             )}
