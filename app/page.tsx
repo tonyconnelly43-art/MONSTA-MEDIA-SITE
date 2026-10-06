@@ -83,7 +83,7 @@ export default async function HomePage({
             sizes="62vw"
             className="object-cover object-[35%_center]"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/60 via-15% to-transparent to-38%" />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/45 via-8% to-transparent to-24%" />
           <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/40 via-transparent to-transparent" />
         </div>
 
