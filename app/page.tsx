@@ -62,31 +62,29 @@ export default async function HomePage({
   return (
     <>
       <section className="relative overflow-hidden bg-brand-navy text-white md:min-h-[680px]">
-        <div className="relative h-56 w-full px-4 sm:h-64 md:hidden">
+        <div className="relative h-56 w-full sm:h-64 md:hidden">
           <Image
-            src="/van-wrap-music-city.png"
-            alt="Music City Heating & Air service van with a full custom wrap design by Monsta Media & Design, featuring a vintage-style raccoon mascot and bold navy and orange branding"
+            src="/van-wrap-music-city-scene.jpg"
+            alt="Music City Heating & Air service van with a full custom wrap design by Monsta Media & Design, featuring a vintage-style raccoon mascot, parked on a city street at dusk"
             fill
             priority
             sizes="100vw"
-            className="object-contain object-bottom"
+            className="object-cover object-[60%_center]"
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/10 to-transparent" />
         </div>
 
         <div className="absolute inset-y-0 right-0 hidden w-[62%] md:block">
-          <div
-            className="absolute inset-0 bg-[radial-gradient(ellipse_at_60%_55%,rgba(19,42,78,0.6),transparent_70%)]"
-            aria-hidden="true"
-          />
           <Image
-            src="/van-wrap-music-city.png"
-            alt="Music City Heating & Air service van with a full custom wrap design by Monsta Media & Design, featuring a vintage-style raccoon mascot and bold navy and orange branding"
+            src="/van-wrap-music-city-scene.jpg"
+            alt="Music City Heating & Air service van with a full custom wrap design by Monsta Media & Design, featuring a vintage-style raccoon mascot, parked on a city street at dusk"
             fill
             priority
             sizes="62vw"
-            className="object-contain object-[55%_center] p-10"
+            className="object-cover object-[35%_center]"
           />
-          <div className="absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-brand-navy to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/70 via-25% to-transparent to-55%" />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/40 via-transparent to-transparent" />
         </div>
 
         <Container className="relative py-8 md:py-32">
