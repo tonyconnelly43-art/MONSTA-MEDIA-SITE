@@ -9,6 +9,8 @@ import { BackToTop } from '@/components/BackToTop';
 import { GoogleAnalytics } from '@/components/GoogleAnalytics';
 import { JsonLd } from '@/components/JsonLd';
 import { MetaPixel } from '@/components/MetaPixel';
+import { AnalyticsGate } from '@/components/AnalyticsGate';
+import { CookieConsentBanner } from '@/components/CookieConsentBanner';
 import { AttributionCapture } from '@/components/AttributionCapture';
 import { QuoteModalProvider } from '@/components/QuoteModalContext';
 import { QuoteModal } from '@/components/QuoteModal';
@@ -34,8 +36,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${display.variable} ${body.variable}`}>
       <body className="font-body">
-        <MetaPixel />
-        <GoogleAnalytics />
+        <AnalyticsGate>
+          <MetaPixel />
+          <GoogleAnalytics />
+        </AnalyticsGate>
         <AttributionCapture />
         <JsonLd data={localBusinessJsonLd()} />
         <QuoteModalProvider>
@@ -47,6 +51,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ChatWidget />
         <BackToTop />
         <Analytics />
+        <CookieConsentBanner />
       </body>
     </html>
   );

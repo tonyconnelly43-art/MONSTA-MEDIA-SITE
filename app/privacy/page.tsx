@@ -75,13 +75,19 @@ export default function PrivacyPage() {
 
         <div>
           <h2 className="font-display text-xl text-brand-red">4. Cookies &amp; Tracking</h2>
-          <p className="mt-2">Our website uses cookies to:</p>
+          <p className="mt-2">Our website uses cookies, Google Analytics, and Meta Pixel to:</p>
           <ul className="mt-1 list-inside list-disc space-y-1">
             <li>Analyze traffic</li>
             <li>Improve SEO performance</li>
             <li>Personalize your browsing experience</li>
+            <li>Measure ad performance</li>
           </ul>
-          <p className="mt-3">You can disable cookies anytime via your browser settings.</p>
+          <p className="mt-3">
+            These tools are not active when you first arrive &mdash; you&apos;ll see a cookie banner asking you to
+            accept or decline analytics cookies, and we only load them if you choose &quot;Accept.&quot; You can
+            change your choice at any time using the &quot;Cookie Preferences&quot; link in the footer, or disable
+            cookies anytime via your browser settings.
+          </p>
         </div>
 
         <div>

@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Facebook, Instagram, Mail, Phone } from 'lucide-react';
 import { Container } from './Container';
+import { CookiePreferencesButton } from './CookiePreferencesButton';
 import { GoogleReviewsBadge } from './GoogleReviewsBadge';
 import { footerNav, primaryNav, siteConfig } from '@/lib/site-config';
 
@@ -72,6 +73,7 @@ export function Footer() {
               {item.label}
             </Link>
           ))}
+          <CookiePreferencesButton className="text-left hover:text-brand-red" />
         </nav>
       </Container>
       <div className="border-t border-white/10 py-4 text-center text-xs text-brand-cream/60">
