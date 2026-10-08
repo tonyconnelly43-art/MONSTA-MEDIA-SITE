@@ -76,11 +76,14 @@ export function Footer() {
           <CookiePreferencesButton className="text-left hover:text-brand-red" />
         </nav>
       </Container>
-      <div className="border-t border-white/10 py-4 text-center text-xs text-brand-cream/60">
-        &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
-      </div>
-      <div className="border-t border-white/10 py-4 text-center text-xs text-brand-cream/60">
-        <div className="inline-flex items-center justify-center gap-2">
+      <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 border-t border-white/10 px-4 py-4 text-center text-xs text-brand-cream/60">
+        <p>
+          &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+        </p>
+        <span className="hidden sm:inline" aria-hidden="true">
+          |
+        </span>
+        <div className="inline-flex items-center gap-2">
           <span>Created by</span>
           <Image
             src="/logo-monsta-dark-bg.png"
