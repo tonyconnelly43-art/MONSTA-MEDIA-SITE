@@ -93,7 +93,7 @@ export default async function HomePage({
               <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
               Cleveland &amp; Northfield, Ohio
             </span>
-            <h1 className="mt-5 font-display text-5xl leading-[1.05] text-white md:text-6xl">
+            <h1 className="mt-5 font-display text-5xl leading-[1.2] text-white md:text-6xl md:leading-[1.2]">
               Branding That <span className="text-brand-red">Eats</span> The{' '}
               <span className="text-brand-red">Competition</span>
             </h1>
