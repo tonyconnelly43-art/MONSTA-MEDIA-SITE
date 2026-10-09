@@ -94,7 +94,8 @@ export default async function HomePage({
               Cleveland &amp; Northfield, Ohio
             </span>
             <h1 className="mt-5 font-display text-5xl leading-[1.05] text-white md:text-6xl">
-              Branding That Eats The Competition
+              Branding That <span className="text-brand-red">Eats</span> The{' '}
+              <span className="text-brand-red">Competition</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg text-brand-cream/90">
               Monsta Media &amp; Design builds bold logos, van wraps, uniforms, and websites for HVAC,
