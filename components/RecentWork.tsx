@@ -108,10 +108,15 @@ export function RecentWork() {
             <h2 className="mt-2 font-display text-3xl text-brand-navy md:text-4xl">{item.title}</h2>
             <p className="mt-4 text-brand-navy/70">{item.description}</p>
             {item.type === 'website' && (
-              <div className="mt-6">
+              <div className="mt-6 flex flex-wrap gap-3">
                 <CTAButton href={item.visitUrl} variant="inverse" external>
                   Visit Site
                 </CTAButton>
+                {item.caseStudyUrl && (
+                  <CTAButton href={item.caseStudyUrl} variant="primary">
+                    Read the Case Study
+                  </CTAButton>
+                )}
               </div>
             )}
           </div>

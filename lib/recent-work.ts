@@ -7,6 +7,7 @@ export type RecentWorkItem =
       desktopImage: string;
       mobileImage: string;
       visitUrl: string;
+      caseStudyUrl?: string;
     }
   | {
       type: 'video';
@@ -26,6 +27,7 @@ export const recentWorkItems: RecentWorkItem[] = [
     desktopImage: '/work-good-hope-hvac.png',
     mobileImage: '/work-good-hope-hvac-mobile.png',
     visitUrl: 'https://www.goodhopecomfort.com',
+    caseStudyUrl: '/case-studies/good-hope',
   },
   {
     type: 'video',

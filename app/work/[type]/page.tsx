@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Container } from '@/components/Container';
+import { CTAButton } from '@/components/CTAButton';
 import { WorkCategoryNav } from '@/components/WorkCategoryNav';
 import { WorkGallery } from '@/components/WorkGallery';
 import { buildMetadata } from '@/lib/seo';
@@ -49,6 +50,20 @@ export default async function WorkCategoryPage({ params }: { params: Promise<{ t
         <div className="mt-10">
           <WorkGallery items={items} />
         </div>
+
+        {type === 'Van Wrap' && (
+          <div className="mt-14 flex flex-col items-center gap-4 rounded-chunky bg-brand-navy px-6 py-10 text-center text-white sm:px-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-red">Free Tool</p>
+            <h2 className="font-display text-2xl text-white md:text-3xl">
+              Got a Wrap? See If It Actually Works on the Road
+            </h2>
+            <p className="max-w-xl text-brand-cream/80">
+              Upload your current wrap and run it through distance blur, motion, glare, and a colorblind
+              simulation &mdash; see what survives a real two-second glance.
+            </p>
+            <CTAButton href="/wrap-tester">Try Wrap Reality Check</CTAButton>
+          </div>
+        )}
       </Container>
     </>
   );
