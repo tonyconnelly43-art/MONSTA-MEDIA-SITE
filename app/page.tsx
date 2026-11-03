@@ -16,9 +16,9 @@ import { promos } from '@/lib/promos';
 import { workItems } from '@/lib/work';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'Branding, Web & Design Agency in Cleveland & Northfield, OH',
+  title: 'HVAC Marketing & Branding Agency in Cleveland, OH',
   description:
-    'Monsta Media & Design builds bold logos, websites, van wraps, and uniform designs for home service and trades businesses in Cleveland, Northfield, and Northeast Ohio.',
+    'Monsta Media & Design builds branding, websites, and local SEO for HVAC and home service companies in Cleveland, Northfield, and Northeast Ohio. See how we help contractors get found and get hired.',
   path: '/',
 });
 
