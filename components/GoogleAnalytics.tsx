@@ -1,6 +1,6 @@
 import Script from 'next/script';
 
-const GA_MEASUREMENT_ID = 'G-W6E2JVDWX2';
+const GA_MEASUREMENT_ID = 'G-VQ3WGHWGFM';
 
 export function GoogleAnalytics() {
   return (
