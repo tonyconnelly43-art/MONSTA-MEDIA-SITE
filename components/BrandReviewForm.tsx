@@ -148,6 +148,18 @@ export function BrandReviewForm({
             className="mt-1 w-full rounded-lg border border-brand-navy/20 px-3 py-2.5 text-brand-navy focus:border-brand-red focus:outline-none"
           />
         </div>
+        <div className="sm:col-span-2">
+          <label htmlFor="companyWebsite" className="text-sm font-semibold text-brand-navy">
+            Company Website
+          </label>
+          <input
+            id="companyWebsite"
+            name="companyWebsite"
+            type="text"
+            placeholder="e.g. yourcompany.com"
+            className="mt-1 w-full rounded-lg border border-brand-navy/20 px-3 py-2.5 text-brand-navy focus:border-brand-red focus:outline-none"
+          />
+        </div>
       </div>
 
       {status === 'error' && (
