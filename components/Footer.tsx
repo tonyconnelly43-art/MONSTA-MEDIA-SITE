@@ -11,13 +11,23 @@ export function Footer() {
     <footer className="border-t-4 border-brand-red bg-brand-navy text-brand-cream">
       <Container className="grid gap-10 py-14 sm:grid-cols-2 md:grid-cols-4">
         <div>
-          <Image
-            src="/logo-monsta-dark-bg.png"
-            alt={siteConfig.name}
-            width={800}
-            height={242}
-            className="h-9 w-auto"
-          />
+          <div className="flex items-end">
+            <Image
+              src="/monstaman.png"
+              alt=""
+              aria-hidden="true"
+              width={1158}
+              height={1791}
+              className="h-16 w-auto -scale-x-100"
+            />
+            <Image
+              src="/logo-monsta-dark-bg.png"
+              alt={siteConfig.name}
+              width={1848}
+              height={398}
+              className="-ml-3 h-11 w-auto"
+            />
+          </div>
           <p className="mt-3 text-sm text-brand-cream/80">{siteConfig.tagline}</p>
           <div className="mt-4">
             <GoogleReviewsBadge />
