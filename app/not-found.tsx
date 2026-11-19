@@ -1,12 +1,12 @@
 import Link from 'next/link';
+import { BrandMark } from '@/components/BrandMark';
 import { Container } from '@/components/Container';
-import { MonsterMascot } from '@/components/MonsterMascot';
 
 export default function NotFound() {
   return (
     <section className="bg-brand-navy text-white">
       <Container className="py-20 text-center md:py-24">
-        <MonsterMascot className="mx-auto h-24 w-24" />
+        <BrandMark className="justify-center" emblemClassName="h-28 w-auto" mascotClassName="-ml-5 h-24 w-auto" />
         <p className="mt-4 text-xs font-semibold uppercase tracking-widest text-brand-red">404 Error</p>
         <h1 className="mt-2 font-display text-4xl text-white md:text-5xl">This Page Got Eaten</h1>
         <p className="mx-auto mt-4 max-w-xl text-brand-cream/90">

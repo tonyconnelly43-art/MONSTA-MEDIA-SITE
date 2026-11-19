@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { MapPin, Palette, Shirt, Truck, Zap, Globe } from 'lucide-react';
+import { BrandMark } from '@/components/BrandMark';
 import { BrandTransformation } from '@/components/BrandTransformation';
 import { Container } from '@/components/Container';
 import { CTAButton } from '@/components/CTAButton';
 import { GoogleReviewsBadge } from '@/components/GoogleReviewsBadge';
-import { MonsterMascot } from '@/components/MonsterMascot';
 import { ProcessSteps } from '@/components/ProcessSteps';
 import { RecentWork } from '@/components/RecentWork';
 import { WhyChooseMonsta } from '@/components/WhyChooseMonsta';
@@ -62,29 +62,16 @@ export default async function HomePage({
   return (
     <>
       <section className="relative overflow-hidden bg-brand-navy text-white md:min-h-[680px]">
-        <div className="relative h-56 w-full sm:h-64 md:hidden">
-          <Image
-            src="/van-wrap-music-city-scene.jpg"
-            alt="Music City Heating & Air service van with a full custom wrap design by Monsta Media & Design, featuring a vintage-style raccoon mascot, parked on a city street at dusk"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-[60%_center]"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/10 to-transparent" />
+        <div className="flex h-48 w-full items-center justify-center sm:h-56 md:hidden">
+          <BrandMark priority emblemClassName="h-32 w-auto" mascotClassName="-ml-6 h-28 w-auto" />
         </div>
 
-        <div className="absolute inset-y-0 right-0 hidden w-[62%] md:block">
-          <Image
-            src="/van-wrap-music-city-scene.jpg"
-            alt="Music City Heating & Air service van with a full custom wrap design by Monsta Media & Design, featuring a vintage-style raccoon mascot, parked on a city street at dusk"
-            fill
+        <div className="absolute inset-y-0 right-0 hidden w-[62%] md:flex md:items-center md:justify-center">
+          <BrandMark
             priority
-            sizes="62vw"
-            className="object-cover object-[35%_center]"
+            emblemClassName="h-[280px] w-auto drop-shadow-[0_25px_35px_rgba(0,0,0,0.45)] lg:h-[340px]"
+            mascotClassName="-ml-10 h-[260px] w-auto drop-shadow-[0_25px_35px_rgba(0,0,0,0.45)] lg:-ml-14 lg:h-[320px]"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/45 via-8% to-transparent to-24%" />
-          <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/40 via-transparent to-transparent" />
         </div>
 
         <Container className="relative py-8 md:py-32">
@@ -113,7 +100,7 @@ export default async function HomePage({
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <div className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-brand-navy/70 py-2 pl-2 pr-5 backdrop-blur-sm">
               <span className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-cream">
-                <MonsterMascot className="h-6 w-6" />
+                <Image src="/logo-emblem.png" alt="" aria-hidden="true" width={1856} height={1958} className="h-6 w-6 object-contain" />
               </span>
               <span className="text-xs font-semibold uppercase tracking-widest text-brand-cream/90">
                 Real Client Work &mdash; Van Wrap Design by Monsta Media
