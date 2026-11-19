@@ -11,8 +11,9 @@ export function WhyChooseMonsta() {
           Why Choose <span className="text-brand-red">Monsta</span>
         </h2>
 
-        <div className="mx-auto mt-10 max-w-4xl rounded-chunky bg-brand-navy p-8 text-brand-cream/90 md:p-12">
-          <div className="flex flex-col items-center gap-8 text-center md:flex-row md:text-left">
+        <div className="relative mx-auto mt-10 max-w-4xl overflow-hidden rounded-chunky bg-brand-navy p-8 text-brand-cream/90 md:p-12">
+          <div aria-hidden="true" className="pointer-events-none absolute inset-0 text-white/[0.06] bg-monster-dots" />
+          <div className="relative flex flex-col items-center gap-8 text-center md:flex-row md:text-left">
             <BrandMark
               className="shrink-0"
               emblemClassName="h-28 w-auto md:h-44"

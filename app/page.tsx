@@ -62,6 +62,40 @@ export default async function HomePage({
   return (
     <>
       <section className="relative overflow-hidden bg-brand-navy text-white md:min-h-[680px]">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 text-white/[0.06] bg-monster-dots" />
+
+        <svg
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-10 top-0 hidden h-full w-[55%] md:block"
+          viewBox="0 0 600 680"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M 560 0 Q 440 220 380 680"
+            fill="none"
+            stroke="white"
+            strokeOpacity="0.07"
+            strokeWidth="26"
+            strokeLinecap="round"
+          />
+          <path
+            d="M 480 0 Q 370 220 320 680"
+            fill="none"
+            stroke="white"
+            strokeOpacity="0.09"
+            strokeWidth="18"
+            strokeLinecap="round"
+          />
+          <path
+            d="M 410 0 Q 310 220 270 680"
+            fill="none"
+            stroke="#D62828"
+            strokeOpacity="0.14"
+            strokeWidth="12"
+            strokeLinecap="round"
+          />
+        </svg>
+
         <div className="flex h-48 w-full items-center justify-center sm:h-56 md:hidden">
           <BrandMark priority emblemClassName="h-32 w-auto" mascotClassName="-ml-6 h-28 w-auto" />
         </div>

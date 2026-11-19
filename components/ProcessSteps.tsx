@@ -21,8 +21,9 @@ const steps = [
 
 export function ProcessSteps() {
   return (
-    <section className="bg-brand-navy py-20 text-white">
-      <Container>
+    <section className="relative overflow-hidden bg-brand-navy py-20 text-white">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 text-white/[0.06] bg-monster-dots" />
+      <Container className="relative">
         <div className="text-center">
           <h2 className="font-display text-3xl text-white md:text-4xl">What A Simple Process!</h2>
           <p className="mx-auto mt-3 max-w-xl text-brand-cream/80">
