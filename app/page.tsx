@@ -97,15 +97,19 @@ export default async function HomePage({
         </svg>
 
         <div className="flex h-48 w-full items-center justify-center sm:h-56 md:hidden">
-          <BrandMark priority emblemClassName="h-32 w-auto" mascotClassName="-ml-6 h-28 w-auto" />
+          <div className="-translate-y-3">
+            <BrandMark priority emblemClassName="h-32 w-auto" mascotClassName="-ml-6 h-28 w-auto" />
+          </div>
         </div>
 
         <div className="absolute inset-y-0 right-0 hidden w-[62%] md:flex md:items-center md:justify-center">
-          <BrandMark
-            priority
-            emblemClassName="h-[280px] w-auto drop-shadow-[0_25px_35px_rgba(0,0,0,0.45)] lg:h-[340px]"
-            mascotClassName="-ml-10 h-[260px] w-auto drop-shadow-[0_25px_35px_rgba(0,0,0,0.45)] lg:-ml-14 lg:h-[320px]"
-          />
+          <div className="-translate-y-6">
+            <BrandMark
+              priority
+              emblemClassName="h-[280px] w-auto drop-shadow-[0_25px_35px_rgba(0,0,0,0.45)] lg:h-[340px]"
+              mascotClassName="-ml-10 h-[260px] w-auto drop-shadow-[0_25px_35px_rgba(0,0,0,0.45)] lg:-ml-14 lg:h-[320px]"
+            />
+          </div>
         </div>
 
         <Container className="relative py-8 md:py-32">
