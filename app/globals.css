@@ -27,3 +27,12 @@ body {
   background-image: radial-gradient(currentColor 1.5px, transparent 1.5px);
   background-size: 18px 18px;
 }
+
+/* Glossy red gradient matching the logo emblem and the "A" in the wordmark. */
+.btn-red-gradient {
+  background-image: linear-gradient(180deg, #c85155 0%, #b50208 45%, #3e0511 100%);
+}
+
+.hover-red-gradient:hover {
+  background-image: linear-gradient(180deg, #c85155 0%, #b50208 45%, #3e0511 100%);
+}

@@ -14,7 +14,7 @@ export function WorkCategoryNav({ activeType }: { activeType: WorkType }) {
           href={`/work/${workTypeSlugs[type]}`}
           className={`rounded-full border-2 px-5 py-2 text-sm font-semibold uppercase tracking-wide transition-colors ${
             type === activeType
-              ? 'border-brand-red bg-brand-red text-white'
+              ? 'border-brand-red btn-red-gradient text-white'
               : 'border-brand-navy/10 text-brand-navy/70 hover:border-brand-red hover:text-brand-red'
           }`}
         >

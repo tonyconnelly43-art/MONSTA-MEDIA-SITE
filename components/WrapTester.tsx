@@ -134,7 +134,7 @@ export function WrapTester() {
         <button
           type="button"
           onClick={() => fileInputRef.current?.click()}
-          className="inline-flex items-center gap-2 rounded-chunky bg-brand-red px-5 py-3 text-sm font-display uppercase tracking-wide text-white transition-colors hover:bg-brand-red-dark"
+          className="inline-flex items-center gap-2 rounded-chunky btn-red-gradient px-5 py-3 text-sm font-display uppercase tracking-wide text-white transition-all hover:brightness-110"
         >
           <Upload className="h-4 w-4" aria-hidden="true" />
           Upload Your Wrap

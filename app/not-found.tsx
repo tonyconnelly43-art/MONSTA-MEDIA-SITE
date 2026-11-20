@@ -15,13 +15,13 @@ export default function NotFound() {
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
           <Link
             href="/"
-            className="inline-flex items-center justify-center rounded-chunky bg-brand-red px-7 py-3.5 font-display uppercase tracking-wide text-white shadow-[0_6px_0_0_#7a1414] transition-all duration-150 hover:-translate-y-0.5"
+            className="inline-flex items-center justify-center rounded-chunky btn-red-gradient px-7 py-3.5 font-display uppercase tracking-wide text-white shadow-[0_6px_0_0_#7a1414] transition-all duration-150 hover:-translate-y-0.5"
           >
             Back to Home
           </Link>
           <Link
             href="/work/van-wraps"
-            className="inline-flex items-center justify-center rounded-chunky border-2 border-white/70 px-7 py-3.5 font-display uppercase tracking-wide text-white transition-all duration-150 hover:-translate-y-0.5 hover:border-brand-red hover:bg-brand-red"
+            className="inline-flex items-center justify-center rounded-chunky border-2 border-white/70 px-7 py-3.5 font-display uppercase tracking-wide text-white transition-all duration-150 hover:-translate-y-0.5 hover:border-brand-red hover-red-gradient"
           >
             See Our Work
           </Link>

@@ -45,7 +45,7 @@ export function MobileNav() {
               setOpen(false);
               openQuoteModal();
             }}
-            className="mt-2 rounded-chunky bg-brand-red px-4 py-3 text-center font-display uppercase tracking-wide text-white"
+            className="mt-2 rounded-chunky btn-red-gradient px-4 py-3 text-center font-display uppercase tracking-wide text-white"
           >
             Get a Quote
           </button>
