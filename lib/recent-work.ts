@@ -19,6 +19,14 @@ export type RecentWorkItem =
 
 export const recentWorkItems: RecentWorkItem[] = [
   {
+    type: 'video',
+    slug: 'qualitrol-repair-promo',
+    title: 'Qualitrol International Repair & Warranty Promo',
+    description:
+      'A motion graphics promo built for Qualitrol International, spotlighting their repair work on VFDs, PLCs, and HMIs and their warranty program — fast-paced animation built to make industrial repair services feel as sharp as the equipment itself.',
+    videoSrc: '/qualitrol-promo.mp4',
+  },
+  {
     type: 'website',
     slug: 'good-hope-website',
     title: 'Good Hope Air Conditioning & Heating Website',
