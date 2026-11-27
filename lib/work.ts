@@ -9,6 +9,8 @@ export type WorkItem = {
   image: string;
   // Optional back-of-garment shot. When set, the card flips on click.
   backImage?: string;
+  // Design concept/mockup, not an installed or printed piece yet.
+  concept?: boolean;
 };
 
 // Preferred left-to-right order for the category nav on /work. A category
@@ -65,6 +67,7 @@ export const workItems: WorkItem[] = [
     tagline: 'Follow the Path to Better Comfort',
     category: 'HVAC',
     type: 'Van Wrap',
+    concept: true,
     image: '/work/true-north-gallery.jpg',
   },
   {
@@ -73,6 +76,7 @@ export const workItems: WorkItem[] = [
     tagline: 'Heating, Cooling & Air Quality',
     category: 'HVAC',
     type: 'Van Wrap',
+    concept: true,
     image: '/work/air-command.jpg',
   },
   {
@@ -81,6 +85,7 @@ export const workItems: WorkItem[] = [
     tagline: 'Reaching the Peak of Comfort',
     category: 'HVAC',
     type: 'Van Wrap',
+    concept: true,
     image: '/work/apex-climate.jpg',
   },
   {
@@ -89,6 +94,7 @@ export const workItems: WorkItem[] = [
     tagline: 'HVAC',
     category: 'HVAC',
     type: 'Van Wrap',
+    concept: true,
     image: '/work/beacon-heating.jpg',
   },
   {
@@ -97,6 +103,7 @@ export const workItems: WorkItem[] = [
     tagline: 'Cold Outside. Controlled Inside.',
     category: 'HVAC',
     type: 'Van Wrap',
+    concept: true,
     image: '/work/mammoth-air.jpg',
   },
   {
@@ -105,6 +112,7 @@ export const workItems: WorkItem[] = [
     tagline: 'Heat & Air',
     category: 'HVAC',
     type: 'Van Wrap',
+    concept: true,
     image: '/work/grizzly-comfort.jpg',
   },
   {
@@ -113,6 +121,7 @@ export const workItems: WorkItem[] = [
     tagline: 'HVAC Services',
     category: 'HVAC',
     type: 'Van Wrap',
+    concept: true,
     image: '/work/svac-services.jpg',
   },
   {
@@ -121,6 +130,7 @@ export const workItems: WorkItem[] = [
     tagline: 'Hard Work. Honest Flow.',
     category: 'Plumbing',
     type: 'Van Wrap',
+    concept: true,
     image: '/work/kraken-plumbing.jpg',
   },
   {
@@ -129,6 +139,7 @@ export const workItems: WorkItem[] = [
     tagline: 'Protecting Homes. Controlling the Flow.',
     category: 'Gutters',
     type: 'Van Wrap',
+    concept: true,
     image: '/work/captain-gutter.jpg',
   },
   {
@@ -137,6 +148,7 @@ export const workItems: WorkItem[] = [
     tagline: 'The Future of Electrical Starts Here',
     category: 'Electrical',
     type: 'Van Wrap',
+    concept: true,
     image: '/work/amp-theory.jpg',
   },
   {
@@ -145,6 +157,7 @@ export const workItems: WorkItem[] = [
     tagline: "Your Lawn's Superhero",
     category: 'Landscaping',
     type: 'Van Wrap',
+    concept: true,
     image: '/work/yard-heros.jpg',
   },
   {
@@ -153,6 +166,7 @@ export const workItems: WorkItem[] = [
     tagline: 'Pressure Washing',
     category: 'Pressure Washing',
     type: 'Van Wrap',
+    concept: true,
     image: '/work/on-par.jpg',
   },
   {
@@ -161,6 +175,7 @@ export const workItems: WorkItem[] = [
     tagline: 'Window Cleaning',
     category: 'Windows',
     type: 'Van Wrap',
+    concept: true,
     image: '/work/clear-point.jpg',
   },
   {
@@ -169,6 +184,7 @@ export const workItems: WorkItem[] = [
     tagline: 'Auto Detailing',
     category: 'Auto Detailing',
     type: 'Van Wrap',
+    concept: true,
     image: '/work/knock-dust.jpg',
   },
   {
@@ -177,6 +193,7 @@ export const workItems: WorkItem[] = [
     tagline: 'Pest Control',
     category: 'Pest Control',
     type: 'Van Wrap',
+    concept: true,
     image: '/work/bug-bounty.jpg',
   },
   {

@@ -31,6 +31,11 @@ export function WorkCard({ item }: { item: WorkItem }) {
         className={`relative overflow-hidden ${frame.aspect} ${frame.padded ? 'p-6' : ''}`}
         style={item.backImage ? { perspective: '1200px' } : undefined}
       >
+        {item.concept && (
+          <span className="pointer-events-none absolute left-2 top-2 z-10 rounded-full bg-brand-navy/85 px-3 py-1 text-[10px] font-semibold uppercase tracking-wide text-white">
+            Concept
+          </span>
+        )}
         {item.backImage ? (
           <button
             type="button"

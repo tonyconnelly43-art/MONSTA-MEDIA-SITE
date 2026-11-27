@@ -25,7 +25,7 @@ export function ProcessSteps() {
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 text-white/[0.06] bg-monster-dots" />
       <Container className="relative">
         <div className="text-center">
-          <h2 className="font-display text-3xl text-white md:text-4xl">What A Simple Process!</h2>
+          <h2 className="font-display text-3xl text-white md:text-4xl">Our Simple 3 Step Process</h2>
           <p className="mx-auto mt-3 max-w-xl text-brand-cream/80">
             Just a simple 3 step process is all it takes to get your new brand launched.
           </p>
