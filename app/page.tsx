@@ -142,7 +142,7 @@ export default async function HomePage({
                 <Image src="/logo-emblem.png" alt="" aria-hidden="true" width={1856} height={1958} className="h-6 w-6 object-contain" />
               </span>
               <span className="text-xs font-semibold uppercase tracking-widest text-brand-cream/90">
-                Real Client Work &mdash; Van Wrap Design by Monsta Media
+                Van Wrap Design by Monsta Media
               </span>
             </div>
             <GoogleReviewsBadge />
