@@ -39,7 +39,7 @@ export default function WrapTesterPage() {
           </h1>
           <p className="mt-5 max-w-2xl text-lg text-brand-cream/80">
             A driver gives your van about two seconds. Upload your wrap and see what actually survives
-            distance, motion, bad light, and a quick glance &mdash; not just how it looks zoomed in on your
+            distance, a squint, and a quick glance &mdash; not just how it looks zoomed in on your
             screen.
           </p>
         </Container>

@@ -9,7 +9,6 @@ type TestMode = {
   label: string;
   sub: string;
   imgStyle?: React.CSSProperties;
-  overlay?: 'glare';
 };
 
 const TESTS: TestMode[] = [
@@ -27,22 +26,6 @@ const TESTS: TestMode[] = [
     sub: 'A quick look',
     imgStyle: { filter: 'url(#monstaMotionLight) blur(0.5px)' },
   },
-  { id: 'mirror', label: 'Mirror', sub: 'Oncoming traffic', imgStyle: { transform: 'scaleX(-1)' } },
-  { id: 'bw', label: 'B & W', sub: 'Color-free read', imgStyle: { filter: 'grayscale(1)' } },
-  {
-    id: 'driveby',
-    label: 'Drive-By',
-    sub: 'Passing at speed',
-    imgStyle: { filter: 'url(#monstaMotionHeavy)' },
-  },
-  { id: 'dusk', label: 'Dusk', sub: 'Low light', imgStyle: { filter: 'brightness(0.5) saturate(0.7)' } },
-  { id: 'glare', label: 'Glare', sub: 'Sun on the panel', overlay: 'glare' },
-  {
-    id: 'colorblind',
-    label: 'Colorblind',
-    sub: 'Deuteranopia',
-    imgStyle: { filter: 'url(#monstaDeuteranopia)' },
-  },
 ];
 
 const DEFAULT_IMAGE = '/van-wrap-music-city-scene.jpg';
@@ -54,18 +37,6 @@ function SvgFilterDefs() {
         <filter id="monstaMotionLight">
           <feGaussianBlur stdDeviation="4 0" />
         </filter>
-        <filter id="monstaMotionHeavy">
-          <feGaussianBlur stdDeviation="10 0" />
-        </filter>
-        <filter id="monstaDeuteranopia">
-          <feColorMatrix
-            type="matrix"
-            values="0.625 0.375 0 0 0
-                    0.7   0.3   0 0 0
-                    0     0.3   0.7 0 0
-                    0     0     0 1 0"
-          />
-        </filter>
       </defs>
     </svg>
   );
@@ -76,15 +47,6 @@ function TestThumb({ test, src }: { test: TestMode; src: string }) {
     <div className="relative aspect-[16/9] overflow-hidden rounded-xl bg-brand-navy">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={src} alt="" className="h-full w-full object-cover" style={test.imgStyle} />
-      {test.overlay === 'glare' && (
-        <div
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              'radial-gradient(circle at 70% 30%, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.35) 25%, transparent 55%)',
-          }}
-        />
-      )}
     </div>
   );
 }
@@ -181,15 +143,6 @@ export function WrapTester() {
                 className="h-full w-full object-cover"
                 style={activeTest.imgStyle}
               />
-              {activeTest.overlay === 'glare' && (
-                <div
-                  className="pointer-events-none absolute inset-0"
-                  style={{
-                    background:
-                      'radial-gradient(circle at 70% 30%, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.35) 25%, transparent 55%)',
-                  }}
-                />
-              )}
             </div>
           </div>
           <p className="mt-3 text-center font-display text-lg text-white">
@@ -200,7 +153,7 @@ export function WrapTester() {
           </p>
         </div>
 
-        <div className="grid grid-cols-5 gap-2 lg:grid-cols-3">
+        <div className="grid grid-cols-2 gap-3">
           {TESTS.map((test) => (
             <button
               key={test.id}

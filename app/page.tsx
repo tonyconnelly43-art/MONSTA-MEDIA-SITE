@@ -161,29 +161,6 @@ export default async function HomePage({
         </div>
       </section>
 
-      <section className="bg-brand-navy-light py-16 md:py-20">
-        <Container>
-          <div className="text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-red">
-              A Free Tool From Monsta Media
-            </p>
-            <h2 className="mt-3 font-display text-3xl text-white md:text-4xl">Wrap Reality Check</h2>
-            <p className="mx-auto mt-3 max-w-xl text-brand-cream/80">
-              A driver gives your van about two seconds. Upload your wrap and see what actually survives
-              distance, motion, bad light, and a quick glance.
-            </p>
-          </div>
-          <div className="mt-10">
-            <WrapTester />
-          </div>
-          <div className="mt-8 text-center">
-            <Link href="/wrap-tester" className="font-semibold text-brand-red underline">
-              See the Full Breakdown
-            </Link>
-          </div>
-        </Container>
-      </section>
-
       <RecentWork />
 
       <section className="py-20">
@@ -214,6 +191,29 @@ export default async function HomePage({
       <ProcessSteps />
 
       <WhyChooseMonsta />
+
+      <section className="bg-brand-navy-light py-16 md:py-20">
+        <Container>
+          <div className="text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-red">
+              A Free Tool From Monsta Media
+            </p>
+            <h2 className="mt-3 font-display text-3xl text-white md:text-4xl">Wrap Reality Check</h2>
+            <p className="mx-auto mt-3 max-w-xl text-brand-cream/80">
+              A driver gives your van about two seconds. Upload your wrap and see what actually survives
+              distance, a squint, and a quick glance.
+            </p>
+          </div>
+          <div className="mt-10">
+            <WrapTester />
+          </div>
+          <div className="mt-8 text-center">
+            <Link href="/wrap-tester" className="font-semibold text-brand-red underline">
+              See the Full Breakdown
+            </Link>
+          </div>
+        </Container>
+      </section>
 
       <BrandTransformation selectedPackage={selectedPackage} promo={promo} promoLabel={promoLabel} />
 
